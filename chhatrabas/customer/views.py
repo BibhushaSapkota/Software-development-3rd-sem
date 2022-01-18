@@ -13,3 +13,16 @@ def register(request):
         form.save()
     else: 
         return render(request,"customer/registration.html")
+
+
+def dashboard(request):
+    return render(request,"customer/dashboard.html")
+
+def blog(request):
+    return render(request,"Blog.html")
+
+def contact(request):
+    return render(request,"contact.html")
+
+def hostel(request):
+    return render(request,"hostel/pagination.html")
