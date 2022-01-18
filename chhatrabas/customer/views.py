@@ -13,3 +13,7 @@ def register(request):
         form.save()
     else: 
         return render(request,"customer/registration.html")
+
+
+def dashboard(request):
+    return render(request,"customer/dashboard.html")
