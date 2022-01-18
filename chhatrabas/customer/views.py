@@ -6,6 +6,7 @@ from customer.models import Customer
 
 # Create your views here.
 
+
 def register(request):
     if request.method=="POST":
         form=CustomerForm(request.POST)
