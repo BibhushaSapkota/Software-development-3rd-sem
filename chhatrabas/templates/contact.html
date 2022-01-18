@@ -1,11 +1,12 @@
 <!DOCTYPE html>
+{% load static %}
 <html>
     <head>
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>
            contact us
         </title>
-        <link rel="stylesheet" href="hostel.css">
+        <link rel="stylesheet" href="{% static 'css/hostel.css' %}">
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">  
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" >
         <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -16,7 +17,7 @@
             <div class="head">
                 <nav class="navbar navbar-expand-lg navbar-dark"> 
                     <a href="#" class="navbar-brand">
-                        <img src="C:\Users\Acer\OneDrive - Softwarica College\Desktop\chhatrabas\chhatra\statics\img\logo.png" height="50" alt="CoolBrand">
+                        <img src="{% static 'img/logo.png' %}" height="50" alt="CoolBrand">
                        
                     </a> 
                     <a class="navbar-brand" href="#" style="font-size: 50px;color: aliceblue; font-family:'Brush Script MT',cursive;">Chhatrabas</a>  

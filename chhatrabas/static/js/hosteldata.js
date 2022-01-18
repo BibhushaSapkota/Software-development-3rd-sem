@@ -17,7 +17,7 @@ var hostels = [
       "24 hours electricity"
     ],
     "Status": "Verified",
-    "image": "1.jpg",
+    "image": "img/1.jpg",
     "link": "profile.html",
     "id": 1
   },
