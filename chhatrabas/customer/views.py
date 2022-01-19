@@ -54,3 +54,7 @@ def contact(request):
 
 def hostel(request):
     return render(request,"hostel/pagination.html")
+
+def userprofile(request):
+    return render(request,"customer/userprofile.html")
+
