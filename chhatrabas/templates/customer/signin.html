@@ -1,0 +1,44 @@
+<html lang="en">
+<head>
+		<meta charset="UTF-8">
+		<title>Login Form</title>
+		{% load static %}
+		<link rel="stylesheet" href="{% static 'css/signin.css' %}">
+		<link href='https://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet'>
+		<script src="{% static 'js/myscripts.js' %}"></script>
+		<script src="{% static 'js/validation.js'%}"></script>
+</head>
+<body>
+	{% csrf_token %}
+  <div class="formC">
+    <div class="title">
+		<a style="font-size: 30px;color: rgb(255, 255, 255); text-align: center; font-family:'Pacifico';">Chhatrabas</a>
+	</div>
+	<div class="subtitle">
+		<a style="font-size: 60px;color: rgb(255, 255, 255); text-align: center; font-family:Arial, Helvetica, sans-serif;">Sign In</a>
+	</div>
+		
+	
+	   
+   	<form action="/customer/login" method="post" onsubmit="validateLoginForm(event)">
+		
+   			<label>Username</label>
+   			<input type="text" name="customer_username">
+   			<label>Password</label>
+   			<input type="password" value="" id="inputPassword" name="customer_password">
+			<div class="password">
+				<input type="checkbox" onclick="myFunction()"> Show Password
+			</div>		
+   	</form>
+   	<div class="bottom">
+		<div>
+		<span>
+			<a style= "text-decoration: none" href="#forgetpasssword">Forgot password?</a>
+		</span>
+			<input type="submit" name="submit" class="send-btn" value="Login">
+		
+		</div>
+	</div>
+  </div>
+</body>
+</html>
