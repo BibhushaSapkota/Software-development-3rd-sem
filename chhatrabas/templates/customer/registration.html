@@ -7,8 +7,10 @@
         </title>
         {% load static %}
         <link rel="stylesheet" href="{% static 'css/registration.css' %}">
+        <script src="{% static 'js/validation.js'%}"></script>
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">  
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" >
+        <link href='https://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet'>
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"> 
             </head>
@@ -48,9 +50,13 @@
                 <div class="registration-section">
                     <div class="col-lg-6 main">
                     <div class="registration-form">
-                        <h4> Chhatrabas</h4>
-                        <h2> Create Your Chhatrabas Account</h2>
-                        <form action="" class="registration"  method="POST">
+                        
+                            <h4>Chhatrabas</h4>
+                        
+                        
+                            <h2>Create your Chhatrabas account</h2>
+                        
+                        <form action="" class="registration"  method="POST" onsubmit="validateRegistrationForm(event)">
                             {% csrf_token %}
                             <input type="text" name="customer_username" id="customer_username" class="text-box" placeholder="User name" required>
                             <input type="text" name="customer_address" id="customer_address" class="text-box" placeholder="Address" required>
@@ -59,7 +65,7 @@
                             <input type="password" name="customer_password" id="customer_password"  class="text-box" placeholder="Password" required>
                             <input type="password" name="customer_confirm-password" id="customer_confirm-password" class="text-box" placeholder="Confirm Password" required>
                             <input type="submit" name="submit" class="send-btn" value="Register">
-                            <p style="color: #FFF;">Already have an account&gt; <a href="#">Login here</a></p>
+                            <p style="color: #FFF;">Already have an account&gt; <a href="login">Login here</a></p>
                             
                         </form>
                     </div>
