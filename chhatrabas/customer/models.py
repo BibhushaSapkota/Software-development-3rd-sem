@@ -9,5 +9,3 @@ class Customer(models.Model):
     customer_email=models.CharField(max_length=200)
     customer_phone=models.CharField(max_length=10)
     customer_password=models.CharField(max_length=100)
-    class Meta:
-        db_table="customer"
