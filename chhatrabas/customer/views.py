@@ -33,7 +33,8 @@ def login(request):
         user=Customer.objects.get(customer_username=customer_username,customer_password=customer_password)
 
         if user is not None:
-            return redirect ("/customer/home")
+            login(request,user)
+            return redirect ("/customer/dashboard")
         else:
            print('error')
     else:
