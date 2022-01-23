@@ -5,5 +5,5 @@ class CustomerForm(forms.ModelForm):
     
     class Meta:
         model = Customer
-        fields = ("__all__")
+        fields = ("username","customer_address","customer_email","customer_phone","password")
  

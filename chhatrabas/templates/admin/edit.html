@@ -3,7 +3,7 @@
     <head>
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>
-           Registration page
+           Edit
         </title>
         {% load static %}
         <link rel="stylesheet" href="{% static 'css/registration.css' %}">
@@ -54,21 +54,22 @@
                             <h4>Chhatrabas</h4>
                         
                         
-                            <h2>Create your Chhatrabas account</h2>
+                            <h2>Edit your Information</h2>
                         
-                        <form action="" method="POST" class="registration"  onsubmit="validateRegistrationForm(event)">
+                        <form action="/user/update/{{customer.customer_id}}" method="POST">
                             {% csrf_token %}
-                            <input type="text" name="username" id="customer_username" class="text-box" placeholder="User name" required>
-                            <input type="text" name="customer_address" id="customer_address" class="text-box" placeholder="Address" required>
-                            <input type="text" name="customer_phone" id="customer_phone" class="text-box" placeholder="Contact" required>
-                            <input type="email" name="customer_email" id="customer_email" class="text-box" placeholder="Your email" required>
-                            <input type="password" name="password" id="customer_password"  class="text-box" placeholder="Password" required>
-                            <input type="password" name="customer_confirm-password" id="customer_confirm-password" class="text-box" placeholder="Confirm Password" required>
-                            <input type="hidden" name="last_login" value="" id="last_login">
-                            <input type="submit" name="submit" class="send-btn" value="Register">
-
-                            <p style="color: #FFF;">Already have an account&gt; <a href="login">Login here</a></p>
-                            
+                            <input type="text" name="username" id="customer_username" value={{customer.username}} class="text-box" placeholder="User name" required>
+                            <input type="text" name="customer_address" id="customer_address" value={{customer.customer_address}} class="text-box" placeholder="Address" required>
+                            <input type="text" name="customer_phone" id="customer_phone" class="text-box" value={{customer.customer_phone}} placeholder="Contact" required>
+                            <input type="email" name="customer_email" id="customer_email" class="text-box"value={{customer.customer_email}} placeholder="Your email" required>
+                            <input type="password" name="password" id="customer_password"  class="text-box" value={{customer.password}} placeholder="Password" required>
+                            <input type="password" name="customer_confirm-password" id="customer_confirm-password" value={{customer.password}} class="text-box" placeholder="Confirm Password" >
+                            <div class="btn-group m-3">
+                                <input value="UPDATE" type="submit" class="btn btn-success ml-5"/>
+                                <a href="/customer/admindash"><button type="button"  class="btn btn-danger ml-3">
+                                    <i class="fa fa-remove mr-1"></i>Cancel</button></a>
+                            </div>
+                          
                         </form>
                     </div>
                     </div>
@@ -77,8 +78,4 @@
             </div>
             
         </body>
-        <script> 
-        let last_login=new Date();
-        document.getElementById('last_login').value=last_login
-        </script>
 </html>
