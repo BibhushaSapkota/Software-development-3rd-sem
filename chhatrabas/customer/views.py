@@ -38,6 +38,7 @@ def login_redirect(request):
         if user is not None:
             login(request,user)
             request.session['username']=request.POST['username']
+            request.session['customer_id']=user.customer_id
             return redirect ('/customer/home')
       
         else:
