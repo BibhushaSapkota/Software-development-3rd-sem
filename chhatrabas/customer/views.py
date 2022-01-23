@@ -4,9 +4,10 @@ from customer.forms import CustomerForm
 from customer.models import Customer
 from django.contrib import auth
 from django.contrib.auth import login,logout
+
+
+
 # Create your views here.
-
-
 def register(request):
     print(request)
     if request.method=="POST":
@@ -33,15 +34,12 @@ def login_redirect(request):
 
         password=request.POST['password']
         user=Customer.objects.get(username=username,password=password)
-        admin=auth.authenticate(username=username,password=password)
 
         if user is not None:
             login(request,user)
             request.session['username']=request.POST['username']
             return redirect ('/customer/home')
-        elif admin is None:
-            return redirect('/user/admindash')
-
+      
         else:
            return render("/customer/login")
     else:
@@ -67,7 +65,11 @@ def contact(request):
     return render(request,"contact.html")
 
 def hostel(request):
-    return render(request,"hostel/pagination.html")
+    customers=Customer.objects.raw('select * from customer')
+    return render(request,"hostel/pagination.html",{'customers':customers})
+
+def hostelprofile(request):
+    return render(request,"hostel/profile.html")
 
 def userprofile(request):
    
