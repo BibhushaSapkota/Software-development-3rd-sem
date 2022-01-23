@@ -2,7 +2,8 @@
 from django.shortcuts import redirect, render
 from customer.forms import CustomerForm
 from customer.models import Customer
-
+from django.contrib import auth
+from django.contrib.auth import login,logout
 # Create your views here.
 
 
@@ -24,25 +25,37 @@ def register(request):
     return render(request,"customer/registration.html",{'form':form})
   
 
-def login(request):
+def login_redirect(request):
     print(request)
     if request.method=='POST':
-        customer_username=request.POST.get("customer_username")
+        
+        username=request.POST['username']
 
-        customer_password=request.POST.get("customer_password")
-        user=Customer.objects.get(customer_username=customer_username,customer_password=customer_password)
+        password=request.POST['password']
+        user=Customer.objects.get(username=username,password=password)
+        admin=auth.authenticate(username=username,password=password)
 
         if user is not None:
             login(request,user)
-            return redirect ("/customer/dashboard")
+            request.session['username']=request.POST['username']
+            return redirect ('/customer/home')
+        elif admin is None:
+            return redirect('/user/admindash')
+
         else:
-           print('error')
+           return render("/customer/login")
     else:
         form=CustomerForm()
         print("invalid")
     return render(request,"customer/signin.html",{'form':form})
 
+def signout(request):
+    request.session.clear()
+    return redirect("/dashboard")
 
+
+def home(request):
+    return render(request,"customer/home.html")
 
 def dashboard(request):
     return render(request,"customer/dashboard.html")
@@ -57,5 +70,8 @@ def hostel(request):
     return render(request,"hostel/pagination.html")
 
 def userprofile(request):
-    return render(request,"customer/userprofile.html")
+   
+    users=Customer.objects.get(username=request.session['username'])
+    return render(request,"customer/userprofile.html",{'users':[users]})
+    
 

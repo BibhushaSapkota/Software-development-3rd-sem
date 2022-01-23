@@ -23,9 +23,9 @@
    	<form action="/customer/login" method="post" onsubmit="validateLoginForm(event)">
 		{% csrf_token %}
    			<label>Username</label>
-   			<input type="text" name="customer_username">
+   			<input type="text" name="username">
    			<label>Password</label>
-   			<input type="password" value="" id="inputPassword" name="customer_password">
+   			<input type="password" value="" id="inputPassword" name="password">
 			<div class="password">
 				<input type="checkbox" onclick="myFunction()"> Show Password
 			</div>		
@@ -35,7 +35,7 @@
 		<span>
 			<a style= "text-decoration: none" href="#forgetpasssword">Forgot password?</a>
 		</span>
-			<input type="submit" name="submit" class="send-btn" value="Login">
+			<input type="submit" name="submit" class="send-btn" value="login">
 		
 		</div>
 	</div>
