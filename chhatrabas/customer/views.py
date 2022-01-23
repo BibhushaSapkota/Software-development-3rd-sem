@@ -43,26 +43,6 @@ def login_redirect(request):
     if request.method=='POST':
         username=request.POST['username']
         password=request.POST['password']
-<<<<<<< HEAD
-        try:
-            user=Customer.objects.get(username=username,password=password)
-            login(request,user)
-            request.session['username']=request.POST['username']
-            return redirect ('/customer/home')
-        except:
-            admin=auth.authenticate(request,username=username,password=password)
-            if admin is not None:
-                return redirect('/user/admindash')
-            return render("/customer/login")
-
-        # if user is not None:
-            
-        # elif admin is None:
-            
-
-        # else:
-        #    return render("/customer/login")
-=======
         user=Customer.objects.get(username=username,password=password)
 
         if user is not None:
@@ -72,7 +52,6 @@ def login_redirect(request):
       
         else:
            return render("/customer/login")
->>>>>>> e0b312f3b3a4e340ba6ba96eb59f62230d991342
     else:
         form=CustomerForm()
         print("invalid")

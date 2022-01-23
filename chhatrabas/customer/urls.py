@@ -11,4 +11,5 @@ urlpatterns = [
     path('hostelprofile',views.hostelprofile),
     path('home',views.home),
     path('userprofile',views.userprofile),
+    path('signout',views.signout)
 ]
