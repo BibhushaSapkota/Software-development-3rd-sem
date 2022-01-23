@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>
+            Cir
+        </title>
+        <link rel="stylesheet" href="rooommm.css">
+        <script src="../js/room.js"></script>
+        <script src="../js/dashboard.js"></script>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">  
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>  
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>  
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script> 
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"> 
+<script>
+  function openNav() {
+    document.getElementById("mySidenav").style.width = "250px";
+    document.getElementById("mySidenav").style.display = "block";
+    document.getElementById("li").style.display = "none";
+    
+  }
+  
+  function closeNav() {
+    document.getElementById("mySidenav").style.width = "0";
+    document.getElementById("li").style.display='block';
+    document.getElementById("mySidenav").style.display = "none";
+
+  }
+  function updateSliderArrowsStatus(
+  cardsContainer,
+  containerWidth,
+  cardCount,
+  cardWidth
+) {
+  if (
+    $(cardsContainer).scrollLeft() + containerWidth <
+    cardCount * cardWidth + 25
+  ) {
+    $("#slide-right-container").addClass("active");
+  } else {
+    $("#slide-right-container").removeClass("active");
+  }
+  if ($(cardsContainer).scrollLeft() > 0) {
+    $("#slide-left-container").addClass("active");
+  } else {
+    $("#slide-left-container").removeClass("active");
+  }
+}
+$(function() {
+  // Scroll products' slider left/right
+  let div = $("#cards-container");
+  let cardCount = $(div)
+    .find(".cards")
+    .children(".card").length;
+  let speed = 1000;
+  let containerWidth = $(".container").width();
+  let cardWidth = 299;
+
+  updateSliderArrowsStatus(div, containerWidth, cardCount, cardWidth);
+
+  //Remove scrollbars
+  $("#slide-right-container").click(function(e) {
+    if ($(div).scrollLeft() + containerWidth < cardCount * cardWidth) {
+      $(div).animate(
+        {
+          scrollLeft: $(div).scrollLeft() + cardWidth
+        },
+        {
+          duration: speed,
+          complete: function() {
+            setTimeout(
+              updateSliderArrowsStatus(
+                div,
+                containerWidth,
+                cardCount,
+                cardWidth
+              ),
+              1005
+            );
+          }
+        }
+      );
+    }
+    updateSliderArrowsStatus(div, containerWidth, cardCount, cardWidth);
+  });
+  $("#slide-left-container").click(function(e) {
+    if ($(div).scrollLeft() + containerWidth > containerWidth) {
+      $(div).animate(
+        {
+          scrollLeft: "-=" + cardWidth
+        },
+        {
+          duration: speed,
+          complete: function() {
+            setTimeout(
+              updateSliderArrowsStatus(
+                div,
+                containerWidth,
+                cardCount,
+                cardWidth
+              ),
+              1005
+            );
+          }
+        }
+      );
+    }
+    updateSliderArrowsStatus(div, containerWidth, cardCount, cardWidth);
+  });
+
+  // If resize action ocurred then update the container width value
+  $(window).resize(function() {
+    try {
+      containerWidth = $("#cards-container").width();
+      updateSliderArrowsStatus(div, containerWidth, cardCount, cardWidth);
+    } catch (error) {
+      console.log(
+        `Error occured while trying to get updated slider container width: 
+            ${error}`
+      );
+    }
+  });
+});
+  </script>
+</head>
+    <body>
+
+
+        <body>
+            <div class="head">
+                <nav class="navbar navbar-expand-lg navbar-dark"> 
+                    <a href="#" class="navbar-brand">
+                        <img src="image/logo.png" height="50" alt="CoolBrand">
+                    </a>
+                    <a class="navbar-brand" href="#" style="font-size: 50px;color: aliceblue; font-family:'Brush Script MT',cursive;">Chhatrabas</a>  
+              
+                </nav>
+            </div>
+            <div class="container-fluid" >
+                <div class="mySidenav " style="margin-top: 20px;">
+                <span style="font-size:30px;cursor:pointer;display:none; color: #fff;" id="li" onclick="openNav()">&#9776;</span>
+                <div class="col-lg-2 left" id="mySidenav" >
+                  <a href="javascript:void(0)" id="close" class="closebtn" onclick="closeNav()">&times;</a>
+                    <div class="mySidenav">
+                        <ul class="navbar-nav">  
+                              
+                               <li class="nav-item">  
+                                <a class="nav-link" id="btn1" href="#" onclick="myFunction(id)"  style="color: aliceblue;">Hostel Profile</a>  
+                               </li>  
+                               <li class="nav-item">  
+                                <a class="nav-link" id="btn2" href="#" onclick="myFunction(id)" href="#" style="color:red; ">Available Rooms</a>  
+                               </li>    
+                               <li class="nav-item">  
+                                 <a class="nav-link"  id="btn3" href="#"  onclick="myFunction(id)" style="color: aliceblue;">Bookings</a>  
+                                </li>    
+                              </ul>
+                    </div>
+                </div>
+          <div class="col-lg-9 main " style="float:left; position:fluid; margin-top:10px;">
+          <div class="container">
+            <div id="slide-left-container">
+              <div class="slide-left">
+              </div>
+            </div>
+            <div id="cards-container">
+              <div class="cards">
+                <div class="card">
+                  <img src="image/img.1.jfif" alt="Room 1" style="width:100%">
+                  <div class="container">
+                    <span><p style="display:inline;width:100%"><b >2nd floor</b></p>
+                 
+                    <p style="display:block;"> Price: 7000/month </p>
+            
+                    <span style="text-align:center;"><button type="button" style="font-size:25px;background: rgb(189, 151, 246);border-color:rgb(189, 151, 246);border-radius:10px;color:white;">
+                      <b>More details</b></button>
+                    </span>
+                    </span>
+                  </div>
+                </div>
+                <div class="card">
+                    <img src="image/img.2.jfif" alt="Room 2" style="width:100%">
+                    <div class="container">
+                      <span><p style="display:inline;width:100%"><b >2nd floor</b></p>
+                   
+                      <p style="display:block;"> Price: 7000/month </p>
+              
+                      <span style="text-align:center;"><button type="button" style="font-size:25px;background: rgb(189, 151, 246);border-color:rgb(189, 151, 246);border-radius:10px;color:white;">
+                        <b>More details</b></button>
+                      </span>
+                      </span>
+                    </div>
+                  </div>
+                  <div class="card">
+                    <img src="image/img.3.jfif" alt="Room 3" style="width:100%">
+                    <div class="container">
+                      <span><p style="display:inline;width:100%"><b >3rd floor</b></p>
+                   
+                      <p style="display:block;"> Price: 9000/month </p>
+              
+                      <span style="text-align:center;"><button type="button" style="font-size:25px;background: rgb(189, 151, 246);border-color:rgb(189, 151, 246);border-radius:10px;color:white;">
+                        <b>More details</b></button>
+                      </span>
+                      </span>
+                    </div>
+                  </div>
+                  <div class="card">
+                    <img src="image/img.4.jfif" alt="Room 4" style="width:100%">
+                    <div class="container">
+                      <span><p style="display:inline;width:100%"><b >1st floor</b></p>
+                   
+                      <p style="display:block;"> Price: 10000/month </p>
+              
+                      <span style="text-align:center;"><button type="button" style="font-size:25px;background: rgb(189, 151, 246);border-color:rgb(189, 151, 246);border-radius:10px;color:white;">
+                        <b>More details</b></button>
+                      </span>
+                      </span>
+                    </div>
+                  </div>
+                  <div class="card">
+                    <img src="image/img.5.jfif" alt="Room 5" style="width:100%">
+                    <div class="container">
+                      <span><p style="display:inline;width:100%"><b >2nd floor</b></p>
+                   
+                      <p style="display:block;"> Price: 7000/month </p>
+              
+                      <span style="text-align:center;"><button type="button" style="font-size:25px;background: rgb(189, 151, 246);border-color:rgb(189, 151, 246);border-radius:10px;color:white;">
+                        <b>More details</b></button>
+                      </span>
+                      </span>
+
+                    
+                    </div>
+                  </div>
+                     
+                     <button type="button"style="height:70px;width:200px;font-size:20px;background: rgb(189, 151, 246);border-color:rgb(189, 151, 246);border-radius:10px;color:white;">
+                      <b>ADD NEW</b></button>
+                      <input type="file" id="imageFile" accept="image/*"> 
+                
+              </div>
+            </div>
+        
+            <div id="slide-right-container">
+              <div class="slide-right">
+              </div>
+            </div>
+           
+          </div>
+          <script src="https://code.jquery.com/jquery-3.3.1.min.js" crossorigin="anonymous"></script>
+        </div>
+        </div>
+        <div class="mapouter"><div class="gmap_canvas"><iframe width="600" height="500" id="gmap_canvas" src="https://maps.google.com/maps?q=city%20centre,%20kathmandu%20&t=&z=13&ie=UTF8&iwloc=&output=embed" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe><a href="https://www.whatismyip-address.com"></a><br><style>.mapouter{position:relative;text-align:right;height:500px;width:600px;}</style><a href="https://www.embedgooglemap.net">google map generator</a><style>.gmap_canvas {overflow:hidden;background:none!important;height:500px;width:600px;}</style></div></div>
+
+
+                    
+    </body>
+</html>

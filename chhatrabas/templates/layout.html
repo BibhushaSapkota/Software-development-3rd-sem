@@ -49,11 +49,11 @@
                 
                </div>  
                <form class="d-flex flex-row justify-content-center">
-                  <button class="btn btn-outline-success my-2 my-sm-0 "  style="border-radius: 12px;background: rgb(189, 151, 246);margin: 5px;padding-left:30px;padding-right: 30px; color: white; font-size: 22px;">
-                    <a href="login" title="section">Login</a></button>
-                  <button class="btn btn-outline-success my-2 my-sm-0 "  style="border-radius: 12px;background: rgb(189, 151, 246);margin: 5px;padding-left:30px;padding-right: 30px; color: white; font-size: 22px;">
-                    <a href="register" title="section">Register</a></button>
-                </form>
+                <button class="btn btn-outline-success my-2 my-sm-0 "  style="border-radius: 12px;background: rgb(189, 151, 246);margin: 5px;padding-left:30px;padding-right: 30px; color: white; font-size: 22px;">
+                  <a href="userprofile" title="section">{{request.session.username}}</a></button>
+                <button class="btn btn-outline-success my-2 my-sm-0 "  style="border-radius: 12px;background: rgb(189, 151, 246);margin: 5px;padding-left:30px;padding-right: 30px; color: white; font-size: 22px;">
+                  <a href="signout" title="section">signout</a></button>
+              </form>
               </div>   
              </nav>
           </header>
