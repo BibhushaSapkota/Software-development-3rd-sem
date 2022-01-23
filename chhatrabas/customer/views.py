@@ -4,9 +4,10 @@ from customer.forms import CustomerForm
 from customer.models import Customer
 from django.contrib import auth
 from django.contrib.auth import login,logout
+
+
+
 # Create your views here.
-
-
 def register(request):
     
     if request.method == "POST":
@@ -42,6 +43,7 @@ def login_redirect(request):
     if request.method=='POST':
         username=request.POST['username']
         password=request.POST['password']
+<<<<<<< HEAD
         try:
             user=Customer.objects.get(username=username,password=password)
             login(request,user)
@@ -60,6 +62,17 @@ def login_redirect(request):
 
         # else:
         #    return render("/customer/login")
+=======
+        user=Customer.objects.get(username=username,password=password)
+
+        if user is not None:
+            login(request,user)
+            request.session['username']=request.POST['username']
+            return redirect ('/customer/home')
+      
+        else:
+           return render("/customer/login")
+>>>>>>> e0b312f3b3a4e340ba6ba96eb59f62230d991342
     else:
         form=CustomerForm()
         print("invalid")
@@ -83,7 +96,11 @@ def contact(request):
     return render(request,"contact.html")
 
 def hostel(request):
-    return render(request,"hostel/pagination.html")
+    customers=Customer.objects.raw('select * from customer')
+    return render(request,"hostel/pagination.html",{'customers':customers})
+
+def hostelprofile(request):
+    return render(request,"hostel/profile.html")
 
 def userprofile(request):
    
