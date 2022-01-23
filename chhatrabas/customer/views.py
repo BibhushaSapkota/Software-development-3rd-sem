@@ -9,29 +9,39 @@ from django.contrib.auth import login,logout
 
 # Create your views here.
 def register(request):
-    print(request)
-    if request.method=="POST":
-        form=CustomerForm(request.POST)
-        if form.is_valid():
-            try:
-                print("valid")
-                form.save()
-                return redirect ("/customer/login")
-            except:
-                print("validation failed")
-
+    
+    if request.method == "POST":
+        print(request.POST)
+        form = CustomerForm(request.POST)
+        form.save()
+        return redirect("/customer/login")
     else:
-        form=CustomerForm()
-        print("invalid")
-    return render(request,"customer/registration.html",{'form':form})
+        form = CustomerForm()
+    return render(request, "customer/registration.html", {'form': form})
+
+# def register(request):
+#     print(request)
+#     if request.method=="POST":
+#         form=CustomerForm(request.POST)
+#         print('form')
+#         if form.is_valid():
+#             try:
+#                 print("valid")
+#                 form.save()
+#                 return redirect ("/customer/login")
+#             except:
+#                 print("validation failed")
+
+#     else:
+#         form=CustomerForm()
+#         print("invalid")
+#     return render(request,"customer/registration.html",{'form':form})
   
 
 def login_redirect(request):
     print(request)
     if request.method=='POST':
-        
         username=request.POST['username']
-
         password=request.POST['password']
         user=Customer.objects.get(username=username,password=password)
 
@@ -50,7 +60,7 @@ def login_redirect(request):
 
 def signout(request):
     request.session.clear()
-    return redirect("/dashboard")
+    return redirect("/customer/dashboard")
 
 
 def home(request):
