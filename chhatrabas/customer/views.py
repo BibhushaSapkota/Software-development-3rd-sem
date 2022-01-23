@@ -2,12 +2,9 @@
 from django.shortcuts import redirect, render
 from customer.forms import CustomerForm
 from customer.models import Customer
-<<<<<<< HEAD
-=======
 from django.contrib import auth
 from django.contrib.auth import login,logout
-# Create your views here.
->>>>>>> 27ecd546c881636b0578ece5b2493513ba529ece
+
 
 
 # Create your views here.
@@ -37,17 +34,12 @@ def login_redirect(request):
 
         password=request.POST['password']
         user=Customer.objects.get(username=username,password=password)
-        admin=auth.authenticate(username=username,password=password)
 
         if user is not None:
             login(request,user)
             request.session['username']=request.POST['username']
             return redirect ('/customer/home')
-        elif admin is None:
-            return redirect('/user/admindash')
-
-<<<<<<< HEAD
-=======
+      
         else:
            return render("/customer/login")
     else:
@@ -63,7 +55,6 @@ def signout(request):
 def home(request):
     return render(request,"customer/home.html")
 
->>>>>>> 27ecd546c881636b0578ece5b2493513ba529ece
 def dashboard(request):
     return render(request,"customer/dashboard.html")
 
@@ -74,14 +65,11 @@ def contact(request):
     return render(request,"contact.html")
 
 def hostel(request):
-<<<<<<< HEAD
     customers=Customer.objects.raw('select * from customer')
     return render(request,"hostel/pagination.html",{'customers':customers})
 
 def hostelprofile(request):
     return render(request,"hostel/profile.html")
-=======
-    return render(request,"hostel/pagination.html")
 
 def userprofile(request):
    
@@ -89,4 +77,3 @@ def userprofile(request):
     return render(request,"customer/userprofile.html",{'users':[users]})
     
 
->>>>>>> 27ecd546c881636b0578ece5b2493513ba529ece

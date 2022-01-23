@@ -8,11 +8,7 @@ urlpatterns = [
     path('blog',views.blog),
     path('contact',views.contact),
     path('hostel',views.hostel),
-<<<<<<< HEAD
     path('hostelprofile',views.hostelprofile),
-]
-=======
     path('home',views.home),
     path('userprofile',views.userprofile),
 ]
->>>>>>> 27ecd546c881636b0578ece5b2493513ba529ece
