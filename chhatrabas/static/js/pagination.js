@@ -81,9 +81,9 @@ $(document).ready(function(){
 function initSliders(){
   $("#rating_slider").slider({
     min: 1,
-    max: 10,
-    values:[1, 10],
-    step: 0.1,
+    max: 5,
+    values:[1, 5],
+    step: 1,
     range:true,
     slide: function( event, ui ) {
       $("#rating_range_label" ).html(ui.values[ 0 ] + ' - ' + ui.values[ 1 ]);
