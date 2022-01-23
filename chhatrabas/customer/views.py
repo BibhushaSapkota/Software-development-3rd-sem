@@ -8,42 +8,58 @@ from django.contrib.auth import login,logout
 
 
 def register(request):
-    print(request)
-    if request.method=="POST":
-        form=CustomerForm(request.POST)
-        if form.is_valid():
-            try:
-                print("valid")
-                form.save()
-                return redirect ("/customer/login")
-            except:
-                print("validation failed")
-
+    
+    if request.method == "POST":
+        print(request.POST)
+        form = CustomerForm(request.POST)
+        form.save()
+        return redirect("/customer/login")
     else:
-        form=CustomerForm()
-        print("invalid")
-    return render(request,"customer/registration.html",{'form':form})
+        form = CustomerForm()
+    return render(request, "customer/registration.html", {'form': form})
+
+# def register(request):
+#     print(request)
+#     if request.method=="POST":
+#         form=CustomerForm(request.POST)
+#         print('form')
+#         if form.is_valid():
+#             try:
+#                 print("valid")
+#                 form.save()
+#                 return redirect ("/customer/login")
+#             except:
+#                 print("validation failed")
+
+#     else:
+#         form=CustomerForm()
+#         print("invalid")
+#     return render(request,"customer/registration.html",{'form':form})
   
 
 def login_redirect(request):
     print(request)
     if request.method=='POST':
-        
         username=request.POST['username']
-
         password=request.POST['password']
-        user=Customer.objects.get(username=username,password=password)
-        admin=auth.authenticate(username=username,password=password)
-
-        if user is not None:
+        try:
+            user=Customer.objects.get(username=username,password=password)
             login(request,user)
             request.session['username']=request.POST['username']
             return redirect ('/customer/home')
-        elif admin is None:
-            return redirect('/user/admindash')
+        except:
+            admin=auth.authenticate(request,username=username,password=password)
+            if admin is not None:
+                return redirect('/user/admindash')
+            return render("/customer/login")
 
-        else:
-           return render("/customer/login")
+        # if user is not None:
+            
+        # elif admin is None:
+            
+
+        # else:
+        #    return render("/customer/login")
     else:
         form=CustomerForm()
         print("invalid")
@@ -51,7 +67,7 @@ def login_redirect(request):
 
 def signout(request):
     request.session.clear()
-    return redirect("/dashboard")
+    return redirect("/customer/dashboard")
 
 
 def home(request):
