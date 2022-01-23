@@ -1,0 +1,48 @@
+{% extends "profilelayout.html" %}
+{% block content %}
+{% load static %}
+        <div class="container-fluid"> 
+            <div class="col-lg-12 main ">
+                
+                <div class="profile-header">
+                    <div class="profile-img">
+                        <img src="profile.png" width="200" alt="">
+    
+                    </div>
+                    
+                    <div class="profile-nav-info">
+                        {% for user in users %}
+                        <h3 class="user-name">{{user.username}}</h3>
+                        <div class="address">
+                            <p class="City"> {{user.customer_address}}</p>
+                            <span class="Country">Nepal</span>
+                        </div>
+                        {% endfor %}
+                    </div>
+                    <div class="profile-option">
+                        <div class="notification">
+                            <i class="fa fa-bell"></i>
+                            <span class="alert-message">1</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="main-bd">
+                    <div class="left-side">
+                        <div class="profile-side">
+                            {% for user in users %}
+                            <p class="mobile-no"><i class="fa fa-phone"></i>{{user.customer_phone}}</p>
+            
+                            <p class="user-mail"><i class="fa fa-envelope-open"></i>{{user.customer_email}}</p>
+                            {% endfor %}
+                        <div class="user-bio">
+                            <h3>Bio</h3>
+                            <p class="bio"> ajhbssh bjka khxkj hak jbx kuga oisxh oiahxxj zhskja kjsxka sxkahj salksj Hi my name is bibhusha sapkota . I am student of Softwarica.</p>
+                        </div>
+                
+                </div>
+                </div>
+            </div>
+            
+            
+{% endblock %}
+

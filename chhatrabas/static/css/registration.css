@@ -78,7 +78,9 @@ body{
     padding: 20px;
     border-radius: 50px;
     margin-bottom: 50px;
-    background:rgba(255, 255, 255,0.2)
+    background:rgba(255, 255, 255,0.2);
+    backdrop-filter: blur(4px);
+	  -webkit-backdrop-filter: blur(4px);
   
   }
   
@@ -152,6 +154,7 @@ body{
       align-items: center;
       box-sizing: border-box;
       font-family: "Poppins",sans-serif;
+      
   
   }
   .registration-info{
@@ -172,6 +175,7 @@ body{
     flex: 1;
 
   }
+  
 
   .registration-form h2{
     color: #fff;
@@ -180,10 +184,13 @@ body{
     text-transform: uppercase;
     margin-top: 20px;
     margin-bottom: 30px;
+    font-family:Arial, Helvetica, sans-serif;
 
   }
 
   .registration-form h4{
+    font-family:'Pacifico';
+    
     color: #fff;
     text-align: center;
     font-size: 15px;
