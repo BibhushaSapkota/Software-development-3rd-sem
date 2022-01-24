@@ -82,7 +82,6 @@ def hostelprofile(request):
     return render(request,"hostel/profile.html")
 
 def userprofile(request):
-   
     users=Customer.objects.get(username=request.session['username'])
     return render(request,"customer/userprofile.html",{'users':[users]})
     
