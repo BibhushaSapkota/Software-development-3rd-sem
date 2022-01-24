@@ -6,7 +6,6 @@ from django.contrib import auth
 from django.contrib.auth import login,logout
 # Create your views here.
 
-
 def register(request):
     
     if request.method == "POST":
@@ -52,14 +51,6 @@ def login_redirect(request):
             if admin is not None:
                 return redirect('/user/admindash')
             return render("/customer/login")
-
-        # if user is not None:
-            
-        # elif admin is None:
-            
-
-        # else:
-        #    return render("/customer/login")
     else:
         form=CustomerForm()
         print("invalid")
