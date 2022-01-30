@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="b4723ad6-6090-4815-ab37-1a1b0d02003d" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/chhatrabas/chhatrabas/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/chhatrabas/chhatrabas/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/chhatrabas/customer/tests/tests_urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/chhatrabas/customer/tests/tests_urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/chhatrabas/customer/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/chhatrabas/customer/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/chhatrabas/customer/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/chhatrabas/customer/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/chhatrabas/pythonBDD/Configuration/config.ini" beforeDir="false" afterPath="$PROJECT_DIR$/chhatrabas/pythonBDD/Configuration/config.ini" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/chhatrabas/pythonBDD/Features/Steps/HomePageSteps.py" beforeDir="false" afterPath="$PROJECT_DIR$/chhatrabas/pythonBDD/Features/Steps/HomePageSteps.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/chhatrabas/pythonBDD/Features/login.feature" beforeDir="false" afterPath="$PROJECT_DIR$/chhatrabas/pythonBDD/Features/login.feature" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/chhatrabas/pythonBDD/Pages/HomePage.py" beforeDir="false" afterPath="$PROJECT_DIR$/chhatrabas/pythonBDD/Pages/HomePage.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/chhatrabas/pythonBDD/Utilities/customLogger.py" beforeDir="false" afterPath="$PROJECT_DIR$/chhatrabas/pythonBDD/Utilities/customLogger.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/chhatrabas/pythonBDD/Utilities/readproperty.py" beforeDir="false" afterPath="$PROJECT_DIR$/chhatrabas/pythonBDD/Utilities/readproperty.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/chhatrabas/templates/customer/signin.html" beforeDir="false" afterPath="$PROJECT_DIR$/chhatrabas/templates/customer/signin.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/chhatrabas/templates/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/chhatrabas/templates/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/chhatrabas/templates/layout.html" beforeDir="false" afterPath="$PROJECT_DIR$/chhatrabas/templates/layout.html" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Python Script" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="ProjectId" id="24PkSVMtswcGQO0q0jC7aifQ2ZQ" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="b4723ad6-6090-4815-ab37-1a1b0d02003d" name="Default Changelist" comment="" />
+      <created>1643539609058</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1643539609058</updated>
+    </task>
+    <servers />
+  </component>
+</project>
