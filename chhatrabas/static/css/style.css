@@ -203,6 +203,7 @@ body{
     width:100%;
     display: flex;
     padding-right: 15px;
+    height: auto;
 }
 .profile-side{
     width: 300px;

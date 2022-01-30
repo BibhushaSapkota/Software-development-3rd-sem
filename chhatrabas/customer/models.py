@@ -9,6 +9,5 @@ class Customer(models.Model):
     customer_phone=models.CharField(max_length=10)
     password=models.CharField(max_length=100)
     last_login=models.DateTimeField(null=True)
-
     class Meta:
             db_table="customer"
