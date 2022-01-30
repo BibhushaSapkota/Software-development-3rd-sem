@@ -1,10 +1,11 @@
+from behave import *
+from webdriver_manager.chrome import ChromeDriverManager
+from selenium import webdriver
 from pythonBDD.Utilities.customLogger import LogGen
 from pythonBDD.Utilities.readproperty import ReadConfig
-from behave import *
-from webdriver_manager.chrome import ChromeDriverManager 
-from selenium import webdriver
 
-baseURl=ReadConfig.getURL()
+
+baseURL=ReadConfig.getURL()
 mylogger=LogGen.loggen()
 
 @given('Launch the browser')
@@ -16,8 +17,9 @@ def stepl_impl(context):
 
 @then('verify the page title')
 def step_imp(context):
-    actual_title=context.driver.title 
-    expected_title="Hungry"
+    actual_title=context.driver.title
+    print(actual_title)
+    expected_title= "Chhatrabas"
 
     if actual_title==expected_title:
         assert True 
@@ -30,4 +32,4 @@ def step_imp(context):
 @then('close the browser')
 def step_impl(context):
     context.driver.close()
-    mylogger.info('Browser closed')
+    mylogger.info('*****Browser closed')

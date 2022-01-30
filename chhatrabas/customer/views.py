@@ -14,7 +14,7 @@ def register(request):
         print(request.POST)
         form = CustomerForm(request.POST)
         form.save()
-        return redirect("/customer/login")
+        return redirect("/login")
     else:
         form = CustomerForm()
     return render(request, "customer/registration.html", {'form': form})
@@ -48,10 +48,10 @@ def login_redirect(request):
         if user is not None:
             login(request,user)
             request.session['username']=request.POST['username']
-            return redirect ('/customer/home')
+            return redirect ('/home')
       
         else:
-           return render("/customer/login")
+           return render("/login")
     else:
         form=CustomerForm()
         print("invalid")
@@ -59,7 +59,7 @@ def login_redirect(request):
 
 def signout(request):
     request.session.clear()
-    return redirect("/customer/dashboard")
+    return redirect("/")
 
 
 def home(request):

@@ -1,5 +1,4 @@
 
-import imp
 from django.test import SimpleTestCase
 
 from django.test import SimpleTestCase
