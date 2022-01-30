@@ -16,7 +16,7 @@ def register(request):
         print(request.POST)
         form = CustomerForm(request.POST)
         form.save()
-        return redirect("/customer/login")
+        return redirect("/login")
     else:
         form = CustomerForm()
     return render(request, "customer/registration.html", {'form': form})
@@ -51,10 +51,10 @@ def login_redirect(request):
             login(request,user)
             request.session['username']=request.POST['username']
             request.session['customer_id']=user.customer_id
-            return redirect ('/customer/home')
+            return redirect ('/home')
       
         else:
-           return render("/customer/login")
+           return render("/login")
     else:
         form=CustomerForm()
         print("invalid")
@@ -62,7 +62,7 @@ def login_redirect(request):
 
 def signout(request):
     request.session.clear()
-    return redirect("/customer/dashboard")
+    return redirect("/dashboard")
 
 
 def home(request):
@@ -92,11 +92,11 @@ def userprofile(request):
 def delete(request,h_id):
     hostel=Hostel.objects.get(hostel_id=h_id)
     hostel.delete()
-    return redirect ("/customer/userprofile")
+    return redirect ("/userprofile")
 
 def date_update(request,h_id):
     print(h_id)
     hostel=Hostel.objects.get(hostel_id=h_id)
     form=HostelupdateForm(request.POST, instance=hostel)
     form.save()
-    return redirect ("/customer/userprofile")
+    return redirect ("/userprofile")
