@@ -33,13 +33,55 @@
         document.getElementById("btnlist1").style.display="none";
 
       }
+
+      function valueSender(id){
+        let hostel = hostels.find(hostel => hostel.id ===  id);
+        var val = Object.values(hostel);
+        localStorage.setItem("hostel",JSON.stringify(val));
+      }
+     
+      {% comment %} 
+
+       alert(document.getElementById("btn_"+id).text);
+      
+      function valueSender(id){
+        var resetValue =0;
+        localStorage.setItem('hostel_'+id, resetValue);
+        alert(document.getElementById("btn_"+id).text);
+    let hostel = hostels.find(hostel => hostel.id ===  id);
+    var a= console.log(hostel);
+    localStorage.setItem('hostel_'+id, JSON.stringify(hostel));
+      } {% endcomment %}
+ 
     </script>
    
   <body>
-    <div class="container">
+   
+      <div class="container">
+         <!--
+      <div class="table-responsive-md  table-responsive-sm ml-3 ">
+        <table class="table table-bordered table-hover table-bordered table-striped">
+               <tr>
+                   <th>name</th>
+                   <th>email</th>
+               </tr>
+            {% for customer in customers %}
+               <tr class="tbody">
+                       <td>{{customer.customer_username}}</td>
+                       <td>{{customer.customer_email}}</td>
+               </tr>
+            {% endfor %}
+        </table>
+      </div>
+    -->
+
+      
+
+
       <div class="sidebar col-md-3">
         <div>
           <h5 class='col-md-6'>Hostel (<span id="total_hostels">0</span>)</h5>
+          
         </div>
         <div>
           <label class="sr-only" for="searchbox">Search</label>
@@ -54,10 +96,10 @@
         <div class="well" id="boxes1">
           
             <fieldset id="rating_criteria">
-                <legend>Rating</legend> <span id="rating_range_label" class="slider-label">1 - 10</span>
+                <legend>Rating</legend> <span id="rating_range_label" class="slider-label">1 - 5</span>
                 <div id="rating_slider" class="slider">
                 </div>
-                <input type="hidden" id="rating_filter" value="1-10">
+                <input type="hidden" id="rating_filter" value="1-5">
             </fieldset>
         </div>
         <div class="well" id="boxes2">
@@ -137,8 +179,16 @@
                 </div>
                 <div class="checkbox">
                   <label>
-                    <input type="checkbox" value="Food service">
-                    <span>Food service</span> 
+                    <input type="checkbox" value="veg food only">
+                    <span>veg food only
+                    </span> 
+                   </label>
+                </div>
+                <div class="checkbox">
+                  <label>
+                    <input type="checkbox" value="both veg and non veg">
+                    <span>both veg and non veg
+                    </span> 
                    </label>
                 </div>
 
@@ -170,7 +220,7 @@
       <script id="hostel-template" type="text/html">
         <div class="col-lg-6 hostel">
           <div class="thumbnail" >
-           
+            
             <span class="label rating"  ><%= rating %> 
               <i class="fa fa-star" aria-hidden="true"></i>
               </span>
@@ -178,9 +228,13 @@
             
         
           <div class="caption">
-            <h4><b><%= _fid %>. <%= name %></b></h4>
+        
+            <h4><b><%= _fid %>. <%= name %>.</b></h4>
+     
+            
+            
             <div class="outline" >
-              <img src="{% static '<%= image %>' %}" class="image">
+              <img src="<%= image %>" class="image">
             </div>
             <div class="detail" >
               <dl>
@@ -197,7 +251,15 @@
               </dl>
             </div>
             <div style="text-align: center;">
-              <a href="<%= link %>" class="btn btn-primary btn-lg active" role="button" aria-pressed="true">More information<%= id %></a>
+              <a href="hostelprofile" class="btn btn-primary btn-lg active" id="btn_<%= _fid %>" onclick="valueSender(<%= _fid %>)" role="button" aria-pressed="true">More info:<%= _fid %>
+                <p id="hosrat"></p>
+                <p id="hosname"><%= name %></p>
+                <p id="hoslocation"><%= location %></p>
+                <p id="hosnearby"><%= Nearby %></p>
+                <p id="hosroommate"><%= roommate %></p>
+                <p id="hostype"><%= genre  %></p>
+                <p id="hosprice"><%= Price %></p>
+              </a>
           </div>
           </div>
         </div>

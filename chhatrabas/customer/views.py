@@ -1,11 +1,15 @@
 
 from django.shortcuts import redirect, render
 from customer.forms import CustomerForm
+from hostel.forms import *
 from customer.models import Customer
+from hostel.models import Hostel
 from django.contrib import auth
 from django.contrib.auth import login,logout
-# Create your views here.
 
+
+
+# Create your views here.
 def register(request):
     
     if request.method == "POST":
@@ -41,16 +45,16 @@ def login_redirect(request):
     if request.method=='POST':
         username=request.POST['username']
         password=request.POST['password']
-        try:
-            user=Customer.objects.get(username=username,password=password)
+        user=Customer.objects.get(username=username,password=password)
+
+        if user is not None:
             login(request,user)
             request.session['username']=request.POST['username']
+            request.session['customer_id']=user.customer_id
             return redirect ('/customer/home')
-        except:
-            admin=auth.authenticate(request,username=username,password=password)
-            if admin is not None:
-                return redirect('/user/admindash')
-            return render("/customer/login")
+      
+        else:
+           return render("/customer/login")
     else:
         form=CustomerForm()
         print("invalid")
@@ -74,11 +78,25 @@ def contact(request):
     return render(request,"contact.html")
 
 def hostel(request):
-    return render(request,"hostel/pagination.html")
+    customers=Customer.objects.raw('select * from customer')
+    return render(request,"hostel/pagination.html",{'customers':customers})
+
+def hostelprofile(request):
+    return render(request,"hostel/profile.html")
 
 def userprofile(request):
-   
+    hostels=Hostel.objects.filter(customer_id = request.session['customer_id'])
     users=Customer.objects.get(username=request.session['username'])
-    return render(request,"customer/userprofile.html",{'users':[users]})
-    
+    return render(request,"customer/userprofile.html",{'users':[users],'hostels':hostels})
 
+def delete(request,h_id):
+    hostel=Hostel.objects.get(hostel_id=h_id)
+    hostel.delete()
+    return redirect ("/customer/userprofile")
+
+def date_update(request,h_id):
+    print(h_id)
+    hostel=Hostel.objects.get(hostel_id=h_id)
+    form=HostelupdateForm(request.POST, instance=hostel)
+    form.save()
+    return redirect ("/customer/userprofile")
