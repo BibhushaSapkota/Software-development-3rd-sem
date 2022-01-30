@@ -14,7 +14,6 @@ function validateRegistrationForm($event){
         alert("password and confirm password doesnt match")
         $event.preventDefault();
     }
-    
     return false;
 }
 function validateLoginForm($event){

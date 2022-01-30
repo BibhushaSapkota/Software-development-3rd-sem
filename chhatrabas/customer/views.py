@@ -7,11 +7,8 @@ from hostel.models import Hostel
 from django.contrib import auth
 from django.contrib.auth import login,logout
 
-
-
 # Create your views here.
 def register(request):
-    
     if request.method == "POST":
         print(request.POST)
         form = CustomerForm(request.POST)
@@ -100,3 +97,4 @@ def date_update(request,h_id):
     form=HostelupdateForm(request.POST, instance=hostel)
     form.save()
     return redirect ("/customer/userprofile")
+
