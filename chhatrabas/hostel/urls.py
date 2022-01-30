@@ -1,5 +1,5 @@
 from django.urls import path
-from hostel import views
+from hostel import views 
 urlpatterns = [
-    path('booking/<int:customer_id>', views.create),
+    path('hostelbook', views.hostelbook),
 ]

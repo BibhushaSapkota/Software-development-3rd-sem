@@ -16,7 +16,8 @@ var hostels = [
     "Price": 14200,
     "genre": [
       "Girls only",
-      "24 hours electricity"
+      "24 hours electricity",
+      "veg food only"
     ],
     "Status": "Verified",
     "image": "/static/img/1.jpg",
@@ -42,7 +43,8 @@ var hostels = [
     "Price": 17500,
     "genre": [
       "Boys only",
-      "24 hours water"
+      "24 hours water",
+      "both veg and non veg"
     ],
     "Status": "Verified",
     "image": "/static/img/2.jpg",
@@ -68,7 +70,7 @@ var hostels = [
       "24 hours electricity",
       "Internet",
       "Laundry service",
-      "Food service"
+    
     ],
     "Status": "Verified",
     "image": "1992-08-23T10:29:29+05:30",
@@ -92,7 +94,8 @@ var hostels = [
       "24 hours electricity",
       "Internet",
       "Laundry service",
-      "Food service"
+      "Food service",
+      "veg food only"
     ],
     "Status": "Verified",
     "image": "1994-02-09T10:29:29+05:30",

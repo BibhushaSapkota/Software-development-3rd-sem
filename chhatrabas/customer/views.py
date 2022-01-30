@@ -1,7 +1,9 @@
 
 from django.shortcuts import redirect, render
 from customer.forms import CustomerForm
+from hostel.forms import *
 from customer.models import Customer
+from hostel.models import Hostel
 from django.contrib import auth
 from django.contrib.auth import login,logout
 
@@ -83,8 +85,18 @@ def hostelprofile(request):
     return render(request,"hostel/profile.html")
 
 def userprofile(request):
-   
+    hostels=Hostel.objects.filter(customer_id = request.session['customer_id'])
     users=Customer.objects.get(username=request.session['username'])
-    return render(request,"customer/userprofile.html",{'users':[users]})
-    
+    return render(request,"customer/userprofile.html",{'users':[users],'hostels':hostels})
 
+def delete(request,h_id):
+    hostel=Hostel.objects.get(hostel_id=h_id)
+    hostel.delete()
+    return redirect ("/customer/userprofile")
+
+def date_update(request,h_id):
+    print(h_id)
+    hostel=Hostel.objects.get(hostel_id=h_id)
+    form=HostelupdateForm(request.POST, instance=hostel)
+    form.save()
+    return redirect ("/customer/userprofile")

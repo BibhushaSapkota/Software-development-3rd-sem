@@ -11,5 +11,7 @@ urlpatterns = [
     path('hostelprofile',views.hostelprofile),
     path('home',views.home),
     path('userprofile',views.userprofile),
-    path('signout',views.signout)
+    path('signout',views.signout),
+    path('delete/<int:h_id>',views.delete),
+    path('date_update/<int:h_id>', views.date_update),
 ]
