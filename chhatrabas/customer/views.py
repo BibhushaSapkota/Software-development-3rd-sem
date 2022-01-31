@@ -6,7 +6,9 @@ from customer.models import Customer
 from hostel.models import Hostel
 from django.contrib import auth
 from django.contrib.auth import login,logout
-
+from user.models import *
+from user.forms import *
+from django.contrib import messages
 
 
 # Create your views here.
@@ -38,31 +40,52 @@ def register(request):
 #         form=CustomerForm()
 #         print("invalid")
 #     return render(request,"customer/registration.html",{'form':form})
-  
 
 def login_redirect(request):
-    print(request)
     if request.method=='POST':
-        username=request.POST['username']
-        password=request.POST['password']
-        user=Customer.objects.get(username=username,password=password)
+        print(request)
+        username=request.POST["username"]
 
-        if user is not None:
-            login(request,user)
+        password=request.POST["password"]
+        try:
+            customer=Customer.objects.get(username=username,password=password)
             request.session['username']=request.POST['username']
-            request.session['customer_id']=user.customer_id
+            request.session['customer_id']=customer.customer_id
             return redirect ('/home')
-      
-        else:
-           return render("/login")
+        except:
+            user=User.objects.get(username=username,password=password)
+            if user is not None:
+                return redirect('/user/admindash')
+            return render("/login")
     else:
+        messages.error(request, 'Username or password doesnt match')
         form=CustomerForm()
         print("invalid")
-    return render(request,"customer/signin.html",{'form':form})
+    return render(request,"customer/signin.html",{'form':form}) 
+
+# def login_redirect(request):
+#     print(request)
+#     if request.method=='POST':
+#         username=request.POST['username']
+#         password=request.POST['password']
+#         user=Customer.objects.get(username=username,password=password)
+
+#         if user is not None:
+#             login(request,user)
+#             request.session['username']=request.POST['username']
+#             request.session['customer_id']=user.customer_id
+#             return redirect ('/home')
+      
+#         else:
+#            return render("/login")
+#     else:
+#         form=CustomerForm()
+#         print("invalid")
+#     return render(request,"customer/signin.html",{'form':form})
 
 def signout(request):
     request.session.clear()
-    return redirect("/dashboard")
+    return redirect("/")
 
 
 def home(request):

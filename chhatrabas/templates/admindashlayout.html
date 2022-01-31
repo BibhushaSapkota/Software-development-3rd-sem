@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+{% load static %}
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Hostel Profile</title>
+        <link rel="stylesheet" href=" {% static 'css/style.css' %}">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">  
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"> 
+    </head>
+    <script>
+        function openNav() {
+          document.getElementById("mySidenav").style.width = "250px";
+          document.getElementById("mySidenav").style.display = "block";
+          document.getElementById("li").style.display = "none";
+          
+        }
+        
+        function closeNav() {
+          document.getElementById("mySidenav").style.width = "0";
+          document.getElementById("li").style.display='block';
+          document.getElementById("mySidenav").style.display = "none";
+          
+         
+      
+        }
+</script>
+<style>
+    @media screen and (min-width: 700px) {
+    .img{
+        display: none;
+    }
+    }
+    .closebtn {
+    position: absolute;
+    display: block;
+    right: 25px;
+    font-size: 36px;
+    margin-left: 50px;
+    }
+</style>
+
+
+    <body>
+        <div class="head">
+            <nav class="navbar navbar-expand-lg navbar-dark"> 
+                <a href="#" class="navbar-brand">
+                    <img src="logo.png" height="50" alt="CoolBrand">
+                </a>
+                <a class="navbar-brand" href="#" style="font-size: 50px;color: aliceblue; font-family:'Brush Script MT',cursive;">Chhatrabas</a>  
+          
+            </nav>
+        </div>
+        <div class="container-fluid">
+            <div class="mySidenav" >
+            <span style="font-size:30px;cursor:pointer;display:none; color: #fff;" id="li" onclick="openNav()">&#9776;</span>
+            <div class="col-lg-2 left" id="mySidenav" >
+              <a href="javascript:void(0)" id="close" class="closebtn" onclick="closeNav()">&times;</a>
+                <div class="mySidenav" >
+                    <ul class="navbar-nav"> 
+                        <li class="nav-item">  
+                            <a class="nav-link" id="btn1" href="" onclick="myFunction(id)" style="color: aliceblue; ">Home</a>  
+                           </li>  
+                           <li class="nav-item">  
+                            <a class="nav-link" id="btn1" href="" onclick="myFunction(id)"  href="#" style="color:red;">Customers</a>  
+                           </li>  
+                           <li class="nav-item">  
+                            <a class="nav-link" id="btn2" href="" onclick="myFunction(id)" style="color: aliceblue;">Hostels</a>  
+                           </li>    
+                           <li class="nav-item">  
+                             <a class="nav-link"  id="btn3" href=""  onclick="myFunction(id)" style="color: aliceblue;">Bookings</a>  
+                            </li>    
+                          </ul>
+                </div>
+            </div>
+            </div>
+
+        <div class="container-fluid"> 
+            
+            {% block content %}{% endblock %}
+
+        </div>
+    </div>
+    </div>
+
+        <script src="https://code.jquery.com/jquery-3.3.1.min.js" crossorigin="anonymous"></script> 
+        <script src="./main.js"></script> 
+        
+    </body>
+</html>
