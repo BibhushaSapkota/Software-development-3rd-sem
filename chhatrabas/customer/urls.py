@@ -4,7 +4,7 @@ from customer import views
 urlpatterns = [
     path('register', views.register),
     path('login',views.login_redirect),
-    path('dashboard',views.dashboard),
+    path('',views.dashboard),
     path('blog',views.blog),
     path('contact',views.contact),
     path('hostel',views.hostel),
