@@ -1,0 +1,145 @@
+:root{
+    --color:#e40046
+}
+
+
+*{
+    margin: 0px;
+    padding: 0px;
+}
+body{
+    height: 100%;
+    width: 100%;
+    background:linear-gradient(135deg, #0D0628,#0D0628 );
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    background-attachment: fixed;
+    margin: 0px ;
+    padding: 0px;
+}
+
+
+.main {
+  position:fluid;
+  float: left;
+  width: 100%;
+  margin-left:0px;
+  height: 600px;
+  padding: 20px;
+  border-radius: 50px;
+  margin-bottom: 50px;
+  background:rgba(255, 255, 255,0.2)
+
+}
+
+.navbar
+{
+    background:rgba(0,0,0,0.2);
+    margin-bottom: 1rem;
+}
+.nav-link{
+  
+    margin-left: 1rem;
+    font-size: 25px;
+    font-family:Georgia, 'Times New Roman', Times, serif;
+
+}
+.navbar-toggler-icon {
+    background:white;
+  }
+.nav-item:hover{
+    background-color: rgba(0, 0, 0,0.2);
+    border-radius: 20px;
+}
+
+::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+    color: rgb(255, 255, 255);
+    opacity: 1; /* Firefox */
+    padding-left: 20px;
+  }
+  
+  :-ms-input-placeholder { /* Internet Explorer 10-11 */
+    color: rgb(255, 255, 255);
+  }
+  
+  ::-ms-input-placeholder { /* Microsoft Edge */
+    color: rgb(245, 245, 245);
+  }
+
+  @media only screen and (max-width: 620px) {
+    /* For mobile phones: */
+    .menu, .main, .right {
+      width: 100%;
+    }
+  }
+  .main {
+    display: flex;
+    float: left;
+    width: 100%;
+    margin-left:0px;
+    height: 600px;
+    padding: 20px;
+    border-radius: 50px;
+    margin-bottom: 50px;
+    background:rgba(255, 255, 255,0.2)
+  
+  }
+  
+  .right {
+    
+    float: left;
+    width: 40%;
+    padding: 15px;
+    margin-top: 7px;
+    text-align: center;
+  }
+  .left {
+    
+    float: left;
+    width: 10%;
+    padding: 15px;
+    margin-top: 7px;
+    text-align: center;
+  }
+  .top{
+    color: white;
+    font-size: 70px;
+  }
+  .disc{
+    color: white;
+     font-size: 25px;
+  }
+  
+
+  @media screen and (max-width: 700px) {
+    body{
+      height: 100%;
+      background: #9032e9fb;
+      background-image: linear-gradient(315deg, #9032e9fb 5%, #b891eb 74%);
+      background-size: cover;
+      
+    }
+    /* For mobile phones: */
+    .top {
+      font-size: 40px;
+    }
+    .disc{
+      font-size: 20px;
+    }
+    .left{
+      width: 10%;
+    }
+    .right{
+      width: 10%;
+    }
+    .main{
+      width: 100%;
+      border-radius: 40px;
+      
+    }
+   
+    
+  }
+
+  

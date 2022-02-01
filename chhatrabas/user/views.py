@@ -32,6 +32,24 @@ def delete(request,p_id):
     customer.delete()
     return redirect ("/user/admindash")
 
+def userinfo(request):
+    if(request.method=="POST"):
+        page = int(request.POST['page'])
+        if('prev' in request.POST):
+            page= page-1
+        if ('next' in request.POST):
+             page=page+1
+        tempOffSet = page - 1
+        offset=tempOffSet*4
+        print(offset)
+    else:
+        offset=0
+        page=1
+    users=User.objects.raw("select * from users limit 4 offset % s",[offset])
+    pageItem=len(users)
+    return render(request,"admin/user.html",{'users':users,'page':page,'pageItem':pageItem})
+
+
 def adduser(request):
     if request.method=="POST":
         form=UserForm(request.POST)
@@ -46,13 +64,13 @@ def adduser(request):
     else:
         form=UserForm()
         print("invalid")
-    return render(request, "user/adduser.html",{'form':form})
+    return render(request, "admin/adduser.html",{'form':form})
 
 
 def edituser(request,p_id):
     try:
        user=User.objects.get(id=p_id)
-       return render(request, "user/edituser.html", {'users':user})
+       return render(request, "admin/edituser.html", {'users':user})
     except:
        print("No Data Found")
     return redirect("/user/userinfo")
@@ -67,7 +85,8 @@ def updateuser(request,p_id):
            return redirect("/user/userinfo")
         except:
            print("validation failed")
-    return render(request, "user/edituser.html", {'users':user})
+    return render(request, "admin/edituser.html", {'users':user})
+
 
 def deleteuser(request,p_id):
     try:
@@ -76,5 +95,3 @@ def deleteuser(request,p_id):
     except:
         print("No data Found")
     return redirect("/user/userinfo")
-
-
