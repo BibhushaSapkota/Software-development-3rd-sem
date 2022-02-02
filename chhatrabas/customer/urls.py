@@ -11,7 +11,3 @@ urlpatterns = [
     path('home',views.home),
     path('userprofile',views.userprofile),
 ]
-<<<<<<< HEAD
-
-=======
->>>>>>> 27ecd546c881636b0578ece5b2493513ba529ece
