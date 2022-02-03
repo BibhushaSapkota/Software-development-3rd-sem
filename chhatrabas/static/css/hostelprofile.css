@@ -387,9 +387,6 @@ button.chatbtn i,button.createbtn i {
   }
 
 }
-
-
-
  @media screen and (min-width: 700px) {
     .img{
       display: none;
