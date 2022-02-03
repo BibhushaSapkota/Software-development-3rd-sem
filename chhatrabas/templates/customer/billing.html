@@ -1,0 +1,81 @@
+{% load static %}
+<html lang="en">
+<head>
+		<meta charset="UTF-8">
+		<title>Billing</title>
+		<link rel="stylesheet" href="{% static 'css/billing.css' %}">
+		<link href='https://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet'>
+		<script src="{% static 'js/billing.js' %}"></script>
+</head>
+<body>
+    <form method="POST" action="/billing" enctype="multipart/form-data">
+        {% csrf_token %}
+  <div class="bill">
+    <div class="title">
+		<a style="font-size: 30px;color: rgb(255, 255, 255); text-align: center; font-family:'Pacifico';">Chhatrabas</a>
+	</div>
+	<div class="subtitle">
+		<a style="font-size: 60px;color: rgb(255, 255, 255); text-align: center; font-family:Arial, Helvetica, sans-serif;">Payment</a>
+	</div>
+	
+    
+	<div class="grid-container">
+        
+
+		<div class ="showdays">
+			<a style="font-size: 25px; font-weight: bold;  color: rgb(255, 255, 255); text-align: center;">Days</a>
+		
+			<p style="font-size: 50px; font-weight: bold;  color: rgb(255, 255, 255); text-align: center;" id="computeDuration"></p>
+			
+			
+		</div>
+
+		<div class ="showprice">
+			<a style="font-size: 25px; font-weight: bold;  color: rgb(255, 255, 255); text-align: center;">Price</a>
+		
+			<p style="font-size: 50px; font-weight: bold;  color: rgb(255, 255, 255); text-align: center;" id="price"></p>
+			
+			
+		</div>
+
+	</div>
+    
+
+   	<label>Enter full name</label>
+   	<input  type="text" name="customer_name" value={{request.session.username}} readonly>
+   	<label for="hostel">Hostels:</label>
+
+        
+    <input  type="text" name="hostel_name" value={{hostel.hostel_name}} id="hostel_name" readonly>
+			  
+
+    
+
+        
+    <input type="hidden" value={{hostel.price}} id="cost">
+     
+	  <label>Select duration</label>
+	  <div class="datepick">
+		From Date  <input type="date" name="start_date" id="from">
+		To Date<input type="date" name="end_date" id="to" onfocusout="computeDuration(); price(); prices();">
+	
+	  </div>  
+	  
+
+      <label for="hostel">Amount:</label>
+      <input type="text" name="total_paid"  id="pricefield" >
+   	<div class="bottom">
+		<div>
+		
+		
+			<button type="submit">Confirm</button>
+		</div>
+        
+	</div>
+
+  </div>
+</form>
+
+
+</body>
+</html>
