@@ -47,6 +47,7 @@
                           <th>date</th>
                           <th>Update date</th>
                           <th></th>
+                          <th>status</th>
                         </tr>
                     </thead>
                         {% for hostel in hostels %}
@@ -64,8 +65,8 @@
                         </form>
                             <a href="/customer/delete/{{hostel.hostel_id}}" style="color:rgb(80, 214, 255)"><i class="fa fa-trash-o ml-2 fa-lg" style="color:red"></i></a>
                         </td>
+                        <td></td>
                         </tr>
-                    
                         {% endfor %}  
                       </table>
                     </div>
