@@ -445,5 +445,7 @@ button.chatbtn i,button.createbtn i {
       display: none;
     }
   } 
-
+#tblhistory{
+  display: none;
+}
 

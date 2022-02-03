@@ -37,8 +37,9 @@
                 </div>
                 </div>
                 <div class="col-lg-9 right-side" style="color:white;">
-                    <h3 style="text-align:center;"> Your bookmarks:</h3>
-                    <div class="table-responsive-md  table-responsive-sm ml-3 ">
+                    <button  class="btn btn-primary" onclick="bookmark()">Your bookmark</button>
+                    <button class="btn btn-primary" onclick="history()">Your history</button>
+                    <div class="table-responsive-md  table-responsive-sm ml-3" id="tblbookmark">
                     <table class="table table-bordered table-hover table-bordered table-striped">
                         <thead class="thead bg-light">
                         <tr>
@@ -49,7 +50,7 @@
                           <th></th>
                           <th>status</th>
                         </tr>
-                    </thead>
+                        </thead>
                         {% for hostel in hostels %}
                         <tr  class="tbody" style="background:white;">
                         <td>{{hostel.hostel_name}}
@@ -68,9 +69,35 @@
                         <td></td>
                         </tr>
                         {% endfor %}  
-                      </table>
+                    </table>
+                </div>
+                    <div class="table-responsive-md  table-responsive-sm ml-3" id="tblhistory">
+                    <table class="table table-bordered table-hover table-bordered table-striped" >
+                        <thead class="thead bg-light">
+                        <tr>
+                          <th>Hostel_name</th>
+                          <th>Price</th>
+                          <th>date</th>
+                          <th>Update date</th>
+                          <th></th>
+                          <th>status</th>
+                        </tr>
+                        </thead>
+                    </table>
+                </div>
                     </div>
                 </div>
             </div>
+            <script>
+                function bookmark() {
+                    document.getElementById("tblbookmark").style.display = "block";
+                    document.getElementById("tblhistory").style.display = "none";
+                  }
+                  function history() {
+                    document.getElementById("tblbookmark").style.display = "none";
+                    document.getElementById("tblhistory").style.display = "block";
+                  }
+
+            </script>
 {% endblock %}
 

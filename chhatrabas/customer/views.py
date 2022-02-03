@@ -6,13 +6,10 @@ from customer.models import Customer
 from hostel.models import Hostel
 from django.contrib import auth
 from django.contrib.auth import login,logout
-<<<<<<< HEAD
-=======
 from user.models import *
 from user.forms import *
 from django.contrib import messages
 
->>>>>>> 02f713f2e889290a56f91181b4ebe2cde7a80e1f
 
 # Create your views here.
 def register(request):
