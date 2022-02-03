@@ -1,6 +1,6 @@
 
 from django.shortcuts import redirect, render
-from customer.forms import CustomerForm
+from customer.forms import CustomerForm,ContactForm
 from hostel.forms import *
 from customer.models import Customer
 from hostel.models import Hostel
@@ -98,6 +98,10 @@ def blog(request):
     return render(request,"Blog.html")
 
 def contact(request):
+    if request.method=="POST":
+        form=ContactForm
+        form.save()
+        messages.info("your message has been submitted")
     return render(request,"contact.html")
 
 def hostel(request):
