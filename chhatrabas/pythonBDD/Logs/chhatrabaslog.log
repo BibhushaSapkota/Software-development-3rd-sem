@@ -1,23 +1,18 @@
-04-Feb-22 16:38:17 -
+04-Feb-22 16:49:42 -
 
-04-Feb-22 16:38:17 -====== WebDriver manager ======
-04-Feb-22 16:38:17 -Current google-chrome version is 97.0.4692
-04-Feb-22 16:38:17 -Get LATEST chromedriver version for 97.0.4692 google-chrome
-04-Feb-22 16:38:19 -There is no [win32] chromedriver for browser  in cache
-04-Feb-22 16:38:19 -Trying to download new driver from https://chromedriver.storage.googleapis.com/97.0.4692.71/chromedriver_win32.zip
-04-Feb-22 16:38:20 -Driver has been saved in cache [C:\Users\Acer\.wdm\drivers\chromedriver\win32\97.0.4692.71]
-04-Feb-22 16:38:23 -****Driver Installed*******
-04-Feb-22 16:38:27 -
+04-Feb-22 16:49:42 -====== WebDriver manager ======
+04-Feb-22 16:49:42 -Current google-chrome version is 97.0.4692
+04-Feb-22 16:49:42 -Get LATEST chromedriver version for 97.0.4692 google-chrome
+04-Feb-22 16:49:42 -Driver [C:\Users\Acer\.wdm\drivers\chromedriver\win32\97.0.4692.71\chromedriver.exe] found in cache
+04-Feb-22 16:49:43 -****Driver Installed*******
+04-Feb-22 16:49:48 -
 
-04-Feb-22 16:38:27 -====== WebDriver manager ======
-04-Feb-22 16:38:27 -Current google-chrome version is 97.0.4692
-04-Feb-22 16:38:27 -Get LATEST chromedriver version for 97.0.4692 google-chrome
-04-Feb-22 16:38:28 -Driver [C:\Users\Acer\.wdm\drivers\chromedriver\win32\97.0.4692.71\chromedriver.exe] found in cache
-04-Feb-22 16:38:29 -****Driver Installed*******
- WebDriver manager ======
-Current google-chrome version is 97.0.4692
-Current google-chrome version is 97.0.4692
-Get LATEST chromedriver version for 97.0.4692 google-chrome
+04-Feb-22 16:49:48 -====== WebDriver manager ======
+04-Feb-22 16:49:48 -Current google-chrome version is 97.0.4692
+04-Feb-22 16:49:48 -Get LATEST chromedriver version for 97.0.4692 google-chrome
+04-Feb-22 16:49:48 -Driver [C:\Users\Acer\.wdm\drivers\chromedriver\win32\97.0.4692.71\chromedriver.exe] found in cache
+04-Feb-22 16:49:49 -****Driver Installed*******
+T chromedriver version for 97.0.4692 google-chrome
 Get LATEST chromedriver version for 97.0.4692 google-chrome
 Driver [C:\Users\Acer\.wdm\drivers\chromedriver\win32\97.0.4692.71\chromedriver.exe] found in cache
 Driver [C:\Users\Acer\.wdm\drivers\chromedriver\win32\97.0.4692.71\chromedriver.exe] found in cache
