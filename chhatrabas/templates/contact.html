@@ -14,35 +14,9 @@
             </head>
 
         <body>
-            <div class="head">
-                <nav class="navbar navbar-expand-lg navbar-dark"> 
-                    <a href="#" class="navbar-brand">
-                        <img src="{% static 'img/logo.png' %}" height="50" alt="CoolBrand">
-                       
-                    </a> 
-                    <a class="navbar-brand" href="#" style="font-size: 50px;color: aliceblue; font-family:'Brush Script MT',cursive;">Chhatrabas</a>  
-                   
-                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">  
-                     <span class="navbar-toggler-icon"></span>  
-                    </button>  
-                    <div class="collapse navbar-collapse " id="collapsibleNavbar">
-                        <div class="container justify-content-center">
-                     <ul class="navbar-nav">  
-                        <li class="nav-item " >  
-                            <a class="nav-link"  id="btn" onclick="myFunction(id)" style="color: aliceblue;">About us</a>  
-                           </li>  
-                           <li class="nav-item">  
-                            <a class="nav-link" id="btn1" href="#" onclick="myFunction(id)" style="color: aliceblue;">Hostel</a>  
-                           </li>  
-                           <li class="nav-item">  
-                            <a class="nav-link" id="btn2" href="#" onclick="myFunction(id)" style="color: aliceblue;">Blog</a>  
-                           </li>    
-                           <li class="nav-item">  
-                             <a class="nav-link"  id="btn3" href="#"  onclick="myFunction(id)" href="#" style="color:red;">Contact</a>  
-                            </li>    
-                          </ul>
-                     </div> 
-                </nav>
+            {% include 'header.html'%}
+            {% block header %}
+            {% endblock %}
             </div>
                 <div class="contact-section">
                     <div class="contact-info">
@@ -54,7 +28,7 @@
                     <div class="col-lg-6 main">
                     <div class="contact-form">
                         <h2> Contact us</h2>
-                        <form class="contact" action="" method="post">
+                        <form class="contact" action="" method="POST">
                             {% csrf_token %}
                             <input type="text" name="name" class="text-box" placeholder="Your name" required>
                             <input type="email" name="email" class="text-box" placeholder="Your email" required>

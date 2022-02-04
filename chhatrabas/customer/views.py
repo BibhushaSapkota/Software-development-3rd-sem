@@ -1,4 +1,6 @@
 
+from email.message import Message
+from telnetlib import AUTHENTICATION
 from django.shortcuts import redirect, render
 from customer.forms import CustomerForm, BillingForm,ContactForm
 from hostel.forms import *
@@ -23,23 +25,7 @@ def register(request):
         form = CustomerForm()
     return render(request, "customer/registration.html", {'form': form})
 
-# def register(request):
-#     print(request)
-#     if request.method=="POST":
-#         form=CustomerForm(request.POST)
-#         print('form')
-#         if form.is_valid():
-#             try:
-#                 print("valid")
-#                 form.save()
-#                 return redirect ("/customer/login")
-#             except:
-#                 print("validation failed")
 
-#     else:
-#         form=CustomerForm()
-#         print("invalid")
-#     return render(request,"customer/registration.html",{'form':form})
 
 def login_redirect(request):
     if request.method=='POST':
@@ -50,10 +36,13 @@ def login_redirect(request):
         try:
             customer=Customer.objects.get(username=username,password=password)
             request.session['username']=request.POST['username']
+            request.session['password']=request.POST['password']
             request.session['customer_id']=customer.customer_id
-            return redirect ('/home')
+            return redirect ('/')
         except:
             user=User.objects.get(username=username,password=password)
+            request.session['username']=request.POST['username']
+            request.session['password']=request.POST['password']
             if user is not None:
                 return redirect('/user/admindash')
             return render("/login")
@@ -63,25 +52,7 @@ def login_redirect(request):
         print("invalid")
     return render(request,"customer/signin.html",{'form':form}) 
 
-# def login_redirect(request):
-#     print(request)
-#     if request.method=='POST':
-#         username=request.POST['username']
-#         password=request.POST['password']
-#         user=Customer.objects.get(username=username,password=password)
 
-#         if user is not None:
-#             login(request,user)
-#             request.session['username']=request.POST['username']
-#             request.session['customer_id']=user.customer_id
-#             return redirect ('/home')
-      
-#         else:
-#            return render("/login")
-#     else:
-#         form=CustomerForm()
-#         print("invalid")
-#     return render(request,"customer/signin.html",{'form':form})
 
 def signout(request):
     request.session.clear()
@@ -91,18 +62,22 @@ def signout(request):
 def home(request):
     return render(request,"customer/home.html")
 
-def dashboard(request):
-    return render(request,"customer/dashboard.html")
+# def dashboard(request):
+#     return render(request,"customer/dashboard.html")
 
 def blog(request):
     return render(request,"Blog.html")
 
 def contact(request):
+    print(request)
     if request.method=="POST":
-        form=ContactForm
+        print("hello")
+        form=ContactForm(request.POST)
+        print(form)
         form.save()
-        messages.info("your message has been submitted")
+        messages.info(Message,"your message has been submitted")
     return render(request,"contact.html")
+
 
 def billing(request,h_id):
     hostel=Hostel.objects.get(hostel_id=h_id)

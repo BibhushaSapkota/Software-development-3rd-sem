@@ -25,7 +25,7 @@ def update(request,p_id):
     customer=Customer.objects.get(customer_id=p_id)
     form=CustomerForm(request.POST, instance=customer)
     form.save()
-    return redirect ("/user/admindash")
+    return redirect ("/")
 
 def delete(request,p_id):
     customer=Customer.objects.get(customer_id=p_id)
