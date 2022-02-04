@@ -58,7 +58,7 @@ def adduser(request):
             try:
                 print("valid")
                 form.save()
-                return redirect("/user/userinfo")
+                return redirect("/user/viewuser")
             except:
                 print("validation failed")
     else:
@@ -73,7 +73,7 @@ def edituser(request,p_id):
        return render(request, "admin/edituser.html", {'users':user})
     except:
        print("No Data Found")
-    return redirect("/user/userinfo")
+    return redirect("/user/viewuser")
 
 
 def updateuser(request,p_id):
@@ -82,7 +82,7 @@ def updateuser(request,p_id):
     if form.is_valid():
         try:
            form. save()
-           return redirect("/user/userinfo")
+           return redirect("/user/viewuser")
         except:
            print("validation failed")
     return render(request, "admin/edituser.html", {'users':user})
@@ -94,4 +94,4 @@ def deleteuser(request,p_id):
        user.delete()
     except:
         print("No data Found")
-    return redirect("/user/userinfo")
+    return redirect("/user/viewuser")
