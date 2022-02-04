@@ -1,6 +1,10 @@
 
 from django.shortcuts import redirect, render
+<<<<<<< HEAD
 from customer.forms import CustomerForm, BillingForm
+=======
+from customer.forms import CustomerForm,ContactForm
+>>>>>>> b964e3417506647ca0166514c81bd3cff88ad9bd
 from hostel.forms import *
 from customer.models import Customer
 from hostel.models import Hostel
@@ -98,6 +102,10 @@ def blog(request):
     return render(request,"Blog.html")
 
 def contact(request):
+    if request.method=="POST":
+        form=ContactForm
+        form.save()
+        messages.info("your message has been submitted")
     return render(request,"contact.html")
 
 def billing(request,h_id):

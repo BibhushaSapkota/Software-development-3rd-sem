@@ -1,3 +1,4 @@
+from pyexpat import model
 from django import forms 
 from customer.models import *
 
@@ -11,3 +12,7 @@ class BillingForm(forms.ModelForm):
         model = Billing
         fields = ("__all__")
  
+class ContactForm(forms.ModelForm):
+    class Meta:
+        model=Contactus
+        fields=("__all__")

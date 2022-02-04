@@ -1,6 +1,14 @@
+from statistics import mode
 from django.db import models
 
 # Create your models here.
+class Contactus(models.Model):
+    name=models.CharField(max_length=100)
+    email=models.CharField(max_length=100)
+    message=models.CharField(max_length=5000)
+    class Meta:
+        db_table="contact"
+        
 class Customer(models.Model):
     customer_id=models.AutoField(auto_created=True,primary_key=True)
     username=models.CharField(max_length=100)
@@ -21,3 +29,7 @@ class Billing(models.Model):
     total_paid=models.CharField(max_length=10)
     class Meta:
         db_table="bill"
+        
+
+
+
