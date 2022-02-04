@@ -5,13 +5,14 @@ from customer.forms import CustomerForm
 from django.shortcuts import redirect
 from user.models import *
 from user.forms import *
-
+from authenticate import *
 # Create your views here.
 
-
+@Authentication.valid_user
 def admindash(request):
     customers=Customer.objects.raw('select * from customer')
     return render(request,"admin/admindash.html",{'customers':customers})
+
 
 def edit(request,p_id):
     try:
@@ -21,17 +22,20 @@ def edit(request,p_id):
        print("No Data Found")
     return redirect("/user/admindash")
 
+
 def update(request,p_id):
     customer=Customer.objects.get(customer_id=p_id)
     form=CustomerForm(request.POST, instance=customer)
     form.save()
     return redirect ("/")
 
+@Authentication.valid_user
 def delete(request,p_id):
     customer=Customer.objects.get(customer_id=p_id)
     customer.delete()
     return redirect ("/user/admindash")
 
+@Authentication.valid_user
 def userinfo(request):
     if(request.method=="POST"):
         page = int(request.POST['page'])
@@ -49,7 +53,7 @@ def userinfo(request):
     pageItem=len(users)
     return render(request,"admin/user.html",{'users':users,'page':page,'pageItem':pageItem})
 
-
+@Authentication.valid_user
 def adduser(request):
     if request.method=="POST":
         form=UserForm(request.POST)
@@ -67,6 +71,7 @@ def adduser(request):
     return render(request, "admin/adduser.html",{'form':form})
 
 
+@Authentication.valid_user
 def edituser(request,p_id):
     try:
        user=User.objects.get(id=p_id)
