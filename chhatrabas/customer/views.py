@@ -3,6 +3,7 @@ from django.shortcuts import redirect, render
 from customer.forms import CustomerForm, BillingForm,ContactForm
 from hostel.forms import *
 from customer.models import Customer
+from customer.models import Billing
 from hostel.models import Hostel
 from django.contrib import auth
 from django.contrib.auth import login,logout
@@ -131,8 +132,9 @@ def hostelprofile(request):
 
 def userprofile(request):
     hostels=Hostel.objects.filter(customer_id = request.session['customer_id'])
+    bills=Billing.objects.filter(customer_name=request.session['username'])
     users=Customer.objects.get(username=request.session['username'])
-    return render(request,"customer/userprofile.html",{'users':[users],'hostels':hostels})
+    return render(request,"customer/userprofile.html",{'users':[users],'hostels':hostels,'bills':bills})
 
 def delete(request,h_id):
     hostel=Hostel.objects.get(hostel_id=h_id)

@@ -48,11 +48,7 @@
                           <th>date</th>
                           <th>Update date</th>
                           <th></th>
-<<<<<<< HEAD
-                          <th>status</th>
-=======
                           <th></th>
->>>>>>> eaeb55b81bcba1539ce1fd472fe60192248658f6
                         </tr>
                         </thead>
                         {% for hostel in hostels %}
@@ -70,14 +66,10 @@
                         </form>
                             <a href="/customer/delete/{{hostel.hostel_id}}" style="color:rgb(80, 214, 255)"><i class="fa fa-trash-o ml-2 fa-lg" style="color:red"></i></a>
                         </td>
-<<<<<<< HEAD
-                        <td></td>
-=======
                         <td>
                             <a class="btn btn-success ml-5" href="/billing/{{hostel.hostel_id}}">Payment</a>   
                            
                         </td>
->>>>>>> eaeb55b81bcba1539ce1fd472fe60192248658f6
                         </tr>
                         {% endfor %}  
                     </table>
@@ -87,13 +79,26 @@
                         <thead class="thead bg-light">
                         <tr>
                           <th>Hostel_name</th>
-                          <th>Price</th>
-                          <th>date</th>
-                          <th>Update date</th>
-                          <th></th>
-                          <th>status</th>
+                          <th>Start Date</th>
+                          <th>End Date</th>
+                          <th>Total Paid</th>
                         </tr>
                         </thead>
+                        {% for bill in bills %}
+                        <tr  class="tbody" style="background:white;">
+                        <td>{{bill.hostel_name}}
+                        </td>
+                        <td>{{bill.start_date}}
+                        </td>
+                        <td>
+                            {{bill.end_date}}
+                        </td>
+                        <td> 
+                            {{bill.total_paid}}
+                        </td>
+                        </tr>
+                        {% endfor %}  
+
                     </table>
                 </div>
                     </div>
