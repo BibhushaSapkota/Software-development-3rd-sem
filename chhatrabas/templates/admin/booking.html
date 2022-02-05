@@ -1,0 +1,56 @@
+{% extends "admindashlayout.html" %}
+{% block content %}
+
+<div class="mt-3">
+    <h2 class="ml-3" style="color: #fff;">Bookings</h2>
+    </div>
+
+                 <div class="table-responsive-md  table-responsive-sm ml-3 ">
+                     <table class="table table-bordered table-hover table-bordered table-striped">
+                         <thead class="thead bg-light">
+                            <tr>
+                                <th>Name</th>
+                                <th>Hostel</th>
+                                <th>Starting date</th>
+                                <th>Last date</th>
+                                <th>Total Amount</th>
+                                
+                                
+                            </tr>
+                         </thead>
+                         {% for booking in bookings %}
+                            <tr class="tbody" style="color: #fff;">
+                        
+                                    <td>{{booking.customer_name}}</td>
+                                    <td>{{booking.hostel_name}}</td>
+                                    <td>{{booking.start_date}}</td>
+                                    <td>{{booking.end_date}}</td>
+                                    <td>{{booking.total_paid}}</td>
+
+                                        
+                                
+                            </tr>
+                         {% endfor %}
+                     </table>
+                 </div>
+                 <div class="pagination d-flex justify-content-center">
+                    <form method="POST" action="">
+                          {% csrf_token %}
+                          {% if page > 1 %}
+                          <button class="btn btn-light p-1" name="prev" >Previous</button>
+                          {% endif %}
+                          <input readonly class="text-center p-1" value="{{page}}" name="page"/>
+                          {% if pageItem == 6 %}
+                          <button name="next" class="btn btn-light p-1">Next</button>
+                          {% endif %}
+                    </form>
+               </div>
+
+                 <script type="text/javascript">
+                    $(function () {
+                        $('.mySidenav').find('.active').removeClass('active');
+                        $('#booking').addClass('active');
+                    });
+                </script>
+
+{% endblock %}

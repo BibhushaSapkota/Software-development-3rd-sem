@@ -2,7 +2,7 @@
 from email.message import Message
 from telnetlib import AUTHENTICATION
 from django.shortcuts import redirect, render
-from chhatrabas.authenticate import Authentication
+from authenticate import Authentication
 from customer.forms import CustomerForm, BillingForm,ContactForm
 from hostel.forms import *
 from customer.models import Customer
@@ -79,7 +79,8 @@ def contact(request):
         messages.info(Message,"your message has been submitted")
     return render(request,"contact.html")
 
-@Authentication.valid_customer_where_id
+
+@Authentication.valid_customer
 def billing(request,h_id):
     hostel=Hostel.objects.get(hostel_id=h_id)
     print(hostel)

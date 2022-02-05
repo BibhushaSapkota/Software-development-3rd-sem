@@ -8,7 +8,7 @@
                         <form method="POST" action="customer_search">
                         {% csrf_token %}
                            <div class="input-group md-form form-sm">
-                              <input class="form-control" type="text" name="search" placeholder="Search by email" >
+                              <input class="form-control" type="text" name="search" placeholder="Search by username" >
                               <div class="input-group-append">
                                 <span class="input-group-text"><i class="fa fa-search "></i></span>
                                </div>
@@ -22,7 +22,7 @@
                      <table class="table table-bordered table-hover table-bordered table-striped">
                          <thead class="thead bg-light">
                             <tr>
-                                <th>name</th>
+                                <th>username</th>
                                 <th>email</th>
                                 <th>address</th>
                                 <th>contact</th>
@@ -47,6 +47,23 @@
                          {% endfor %}
                      </table>
                  </div>
-            
+                 <div class="pagination d-flex justify-content-center">
+                    <form method="POST" action="">
+                          {% csrf_token %}
+                          {% if page > 1 %}
+                          <button class="btn btn-light p-1" name="prev" >Previous</button>
+                          {% endif %}
+                          <input readonly class="text-center p-1" value="{{page}}" name="page"/>
+                          {% if pageItem == 6 %}
+                          <button name="next" class="btn btn-light p-1">Next</button>
+                          {% endif %}
+                    </form>
+                    
+                 <script type="text/javascript">
+                    $(function () {
+                        $('.mySidenav').find('.active').removeClass('active');
+                        $('#customer').addClass('active');
+                    });
+                </script>
 
 {% endblock %}

@@ -10,4 +10,8 @@ urlpatterns = [
     path('edituser/<int:p_id>',views.edituser),
     path('updateuser/<int:p_id>',views.updateuser),
     path('deleteuser/<int:p_id>',views.deleteuser),
+    path('customer_search',views.search),
+    path('review',views.review),
+    path('message',views.message),
+    path('booking',views.booking)
 ]
