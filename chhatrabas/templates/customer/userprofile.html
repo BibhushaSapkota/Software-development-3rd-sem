@@ -48,7 +48,11 @@
                           <th>date</th>
                           <th>Update date</th>
                           <th></th>
+<<<<<<< HEAD
                           <th>status</th>
+=======
+                          <th></th>
+>>>>>>> eaeb55b81bcba1539ce1fd472fe60192248658f6
                         </tr>
                         </thead>
                         {% for hostel in hostels %}
@@ -66,7 +70,14 @@
                         </form>
                             <a href="/customer/delete/{{hostel.hostel_id}}" style="color:rgb(80, 214, 255)"><i class="fa fa-trash-o ml-2 fa-lg" style="color:red"></i></a>
                         </td>
+<<<<<<< HEAD
                         <td></td>
+=======
+                        <td>
+                            <a class="btn btn-success ml-5" href="/billing/{{hostel.hostel_id}}">Payment</a>   
+                           
+                        </td>
+>>>>>>> eaeb55b81bcba1539ce1fd472fe60192248658f6
                         </tr>
                         {% endfor %}  
                     </table>
