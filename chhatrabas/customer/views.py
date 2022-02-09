@@ -37,12 +37,6 @@ def login_redirect(request):
         try:
             customer=Customer.objects.get(username=username,password=password)
             request.session['username']=request.POST['username']
-<<<<<<< HEAD
-            return redirect ('/home')
-      
-        else:
-           return render("/login")
-=======
             request.session['password']=request.POST['password']
             request.session['customer_id']=customer.customer_id
             return redirect ('/')
@@ -53,7 +47,6 @@ def login_redirect(request):
             if user is not None:
                 return redirect('/user/admindash')
             return render("/login")
->>>>>>> 3a36dd477292d440b7c32cda54324876d84465ff
     else:
         messages.error(request, 'Username or password doesnt match')
         form=CustomerForm()
@@ -119,10 +112,7 @@ def hostelprofile(request):
 
 @Authentication.valid_customer
 def userprofile(request):
-<<<<<<< HEAD
-=======
     hostels=Hostel.objects.filter(customer_id = request.session['customer_id'])
->>>>>>> 3a36dd477292d440b7c32cda54324876d84465ff
     users=Customer.objects.get(username=request.session['username'])
     return render(request,"customer/userprofile.html",{'users':[users],'hostels':hostels})
 

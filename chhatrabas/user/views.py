@@ -1,4 +1,4 @@
-import imp
+
 from django.shortcuts import render
 from customer.models import *
 from customer.forms import *
@@ -61,8 +61,6 @@ def delete(request,p_id):
     customer=Customer.objects.get(customer_id=p_id)
     customer.delete()
     return redirect ("/user/admindash")
-<<<<<<< HEAD
-=======
 
 @Authentication.valid_user
 def userinfo(request):
@@ -183,4 +181,3 @@ def booking(request):
     booking=Billing.objects.raw("select * from bill limit 6 offset % s",[offset])
     pageItem=len(booking)
     return render(request,"admin/booking.html",{'bookings':booking,'page':page,'pageItem':pageItem})
->>>>>>> 3a36dd477292d440b7c32cda54324876d84465ff

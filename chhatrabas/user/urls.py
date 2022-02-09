@@ -1,12 +1,6 @@
 from django.urls import path
 from user import views 
 urlpatterns = [
-<<<<<<< HEAD
-    path('admindash', views.admindash, name="admindash"),
-    path('edit/<int:p_id>',views.edit, name="edit"),
-    path('update/<int:p_id>',views.update, name="update"),
-    path('delete/<int:p_id>',views.delete, name="delete")
-=======
     path('admindash', views.admindash),
     path('edit/<int:p_id>',views.edit),
     path('update/<int:p_id>',views.update),
@@ -20,5 +14,4 @@ urlpatterns = [
     path('review',views.review),
     path('message',views.message),
     path('booking',views.booking)
->>>>>>> 3a36dd477292d440b7c32cda54324876d84465ff
 ]
