@@ -80,7 +80,7 @@ def contact(request):
     return render(request,"contact.html")
 
 
-@Authentication.valid_customer
+
 def billing(request,h_id):
     hostel=Hostel.objects.get(hostel_id=h_id)
     print(hostel)
@@ -91,7 +91,7 @@ def billing(request,h_id):
 
     return render(request,"customer/billing.html",{'hostel':hostel})
 
-@Authentication.valid_customer
+
 def bill(request):
     print(request)
     if request.method=="POST":
@@ -116,13 +116,12 @@ def userprofile(request):
     users=Customer.objects.get(username=request.session['username'])
     return render(request,"customer/userprofile.html",{'users':[users],'hostels':hostels})
 
-@Authentication.valid_customer
 def delete(request,h_id):
     hostel=Hostel.objects.get(hostel_id=h_id)
     hostel.delete()
     return redirect ("/userprofile")
 
-@Authentication.valid_customer
+
 def date_update(request,h_id):
     print(h_id)
     hostel=Hostel.objects.get(hostel_id=h_id)

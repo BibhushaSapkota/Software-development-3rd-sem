@@ -7,6 +7,7 @@ from django.shortcuts import redirect
 from user.models import *
 from user.forms import *
 from authenticate import *
+from hostel.models import Reviews
 # Create your views here.
 
 @Authentication.valid_user
@@ -23,9 +24,13 @@ def admindash(request):
     else:
         offset=0
         page=1
+    reviews=Reviews.objects.all().count()
+    customer=Customer.objects.all().count()
+    booking=Billing.objects.all().count()
+
     customers=Customer.objects.raw("select * from customer limit 4 offset % s",[offset])
     pageItem=len(customers)
-    return render(request,"admin/admindash.html",{'customers':customers,'page':page,'pageItem':pageItem})
+    return render(request,"admin/admindash.html",{'customers':customers,'reviews':reviews,'customer':customer,'booking':booking,'page':page,'pageItem':pageItem})
 
 
 def search(request):
