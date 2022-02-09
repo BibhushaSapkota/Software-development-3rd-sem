@@ -39,23 +39,13 @@
     margin-left: 50px;
     }
 </style>
-
-
     <body>
-        <div class="head">
-            <nav class="navbar navbar-expand-lg navbar-dark"> 
-                <a href="#" class="navbar-brand">
-                    <img src="C:\Users\Acer\OneDrive - Softwarica College\Desktop\html\logo.png" height="50" alt="CoolBrand">
-                </a>
-                <a class="navbar-brand" href="#" style="font-size: 50px;color: aliceblue; font-family:'Brush Script MT',cursive;">Chhatrabas</a>  
-          
-            </nav>
-        </div>
+        {% include 'header.html'%}
+          {% block header %}
+          {% endblock %}
 
         {% block content %} {% endblock %}
-
- 
-
+        
     <script src="https://code.jquery.com/jquery-3.3.1.min.js" crossorigin="anonymous"></script> 
      
     

@@ -7,9 +7,7 @@
                 <div class="profile-header">
                     <div class="profile-img">
                         <img src="profile.png" width="200" alt="">
-    
                     </div>
-                    
                     <div class="profile-nav-info">
                         {% for user in users %}
                         <h3 class="user-name">{{user.username}}</h3>
@@ -30,19 +28,55 @@
                     <div class="left-side">
                         <div class="profile-side">
                             {% for user in users %}
-                            <p class="mobile-no"><i class="fa fa-phone"></i>{{user.customer_phone}}</p>
-            
-                            <p class="user-mail"><i class="fa fa-envelope-open"></i>{{user.customer_email}}</p>
-                            {% endfor %}
+                            <p class="mobile-no"><i class="fa fa-phone"></i>{{user.customer_phone}}</p>                            <p class="user-mail"><i class="fa fa-envelope-open"></i>{{user.customer_email}}</p>
+                            
                         <div class="user-bio">
                             <h3>Bio</h3>
                             <p class="bio"> ajhbssh bjka khxkj hak jbx kuga oisxh oiahxxj zhskja kjsxka sxkahj salksj Hi my name is bibhusha sapkota . I am student of Softwarica.</p>
                         </div>
-                
+                        <a href="/user/edit/{{user.customer_id}}" style="color:green"><i class="fa fa-pencil-square fa-lg" ></i>{{user.customer_id}}</a>
+                            {% endfor %}
+                    </div>
                 </div>
+                <div class="col-lg-9 right-side" style="color:white;">
+                    <h3 style="text-align:center;"> Your bookmarks:</h3>
+                    <div class="table-responsive-md  table-responsive-sm ml-3 ">
+                    <table class="table table-bordered table-hover table-bordered table-striped">
+                        <thead class="thead bg-light">
+                        <tr>
+                          <th>Hostel_name</th>
+                          <th>Price</th>
+                          <th>date</th>
+                          <th>Update date</th>
+                          <th></th>
+                          <th></th>
+                        </tr>
+                    </thead>
+                        {% for hostel in hostels %}
+                        <tr  class="tbody" style="background:white;">
+                        <td>{{hostel.hostel_name}}
+                        </td>
+                        <td>{{hostel.price}}
+                        </td>
+                        <td>{{hostel.date}}</td>
+                        <form action="/customer/date_update/{{hostel.hostel_id}}" method="POST" enctype="multipart/form-data">
+                            {% csrf_token %}
+                            <td><input type="date" name="date" value={{hostel.date}} id="start"></td>
+                        <td>
+                            <input value="UPDATE" type="submit" class="btn btn-success ml-5"/>
+                        </form>
+                            <a href="/customer/delete/{{hostel.hostel_id}}" style="color:rgb(80, 214, 255)"><i class="fa fa-trash-o ml-2 fa-lg" style="color:red"></i></a>
+                        </td>
+                        <td>
+                            <a class="btn btn-success ml-5" href="/billing/{{hostel.hostel_id}}">Payment</a>   
+                           
+                        </td>
+                        </tr>
+                    
+                        {% endfor %}  
+                      </table>
+                    </div>
                 </div>
             </div>
-            
-            
 {% endblock %}
 

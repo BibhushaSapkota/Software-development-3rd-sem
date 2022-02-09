@@ -12,8 +12,7 @@
     @media screen and (min-width: 700px) {
     .img{
         display: none;
-    }
-    }
+    }}
     .closebtn {
     position: absolute;
     display: block;
@@ -23,6 +22,9 @@
     }
 </style>
     <body>
+        {% include 'header.html'%}
+          {% block header %}
+          {% endblock %}
         <div class="container-fluid d-flex justify-content-center"> 
             <div class="col-lg-10 main ">
             <div class="profile-header">
@@ -48,13 +50,20 @@
                     <div class="user-bio">
                         <h3>Price per month</h3>
                         <p class="bio" id="price" style="font-size:20px"></p>
-                         <p>Booking date:<p> <input type="date" id="start" name="start">
+                        <form action="/hostel/hostelbook" method="POST">
+                            {% csrf_token %}
+                         <p>Booking date:<p> <input type="date" name="date" id="start" required>
                     </div>
                     <div class="profile-btn">
-                        <button class="chatbtn" style="background-color:green;">
-                            <i class="fa fa-plus"></i>Book now                     
-                        </button>
-                        
+                        <div style="display:none">
+                            <input type="text" name="customer_id" id="customer_id" class="text-box" value={{request.session.customer_id}}>
+                            <input type="text" name="customername" id="customername" class="text-box" value={{request.session.username}}>
+                            <input type="text" name="hostel_name" id="hostel_name" class="text-box">
+                            <input type="text" name="price" id="price-hos"  class="text-box">
+                        </div>
+                
+                        <input type="submit" name="submit" value="Bookmark" class="chatbtn" style="background-color:green;">                   
+                        </form>
                         <button class="chatbtn">
                             <i class="fa fa-comment"></i>Chat                        
                         </button>
@@ -85,6 +94,17 @@
                     </div>
                     <div class="profile-body" style="color: rgb(255, 255, 255);">
                         <div class="profile-posts tab">
+                            <div class="map">
+                                <div class="mapouter" style="float:right;"><div class="gmap_canvas"><iframe width="300" height="283" id="gmap_canvas"
+
+                                    src="https://maps.google.com/maps?ll=27.7012837,85.3373779&q=Daimen Boys Hostel&t=&z=14&ie=UTF8&iwloc=&output=embed"
+                                    
+                                    frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe><a href="https://techwithlove.com/how-to-know-who-viewed-my-whatsapp-profile/">
+                                    
+                                        TechWithLove</a></div><style>.mapouter{position:relative;text-align:right;height:283px;width:300px;}.gmap_canvas
+                                    
+                                    {overflow:hidden;background:none!important;height:283px;width:300px;}</style></div>
+                            </div>
                             <h1>Information</h1>
                             <p>
                                 The information listed are all validated or verified so no need to worry about the information. All the information are gathered from google. 
@@ -99,6 +119,8 @@
                             
                         </div>
                         <div class="profile-review tab">
+                            
+                            <a href="/hostel/review"><button> Write a review</button></a>
                             <h1>User Reviews</h1>
                             <p>Review no 1</p>
                             <p id="review1"></p>
@@ -120,7 +142,8 @@
                 </div>
             </div>
         </div>
-    </div>
+       
+        </div>
     </div>
     <script>
         var b = JSON.parse(localStorage.getItem("hostel"));
@@ -143,7 +166,10 @@
         document.getElementById("img1").src =b[12];
         document.getElementById("img2").src =b[13];
         document.getElementById("img3").src =b[14];
-        
+
+        document.getElementById("hostel_name").value = b[1];
+        document.getElementById("price-hos").value = b[9];
+
     </script>
         <script src="https://code.jquery.com/jquery-3.3.1.min.js" crossorigin="anonymous"></script> 
         <script src="{% static 'js/hostelprofile.js' %}"></script>

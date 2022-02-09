@@ -56,7 +56,10 @@
     </script>
    
   <body>
-   
+    {% include 'header.html'%}
+    {% block header %}
+    {% endblock %}
+
       <div class="container">
          <!--
       <div class="table-responsive-md  table-responsive-sm ml-3 ">
@@ -81,6 +84,7 @@
       <div class="sidebar col-md-3">
         <div>
           <h5 class='col-md-6'>Hostel (<span id="total_hostels">0</span>)</h5>
+          
         </div>
         <div>
           <label class="sr-only" for="searchbox">Search</label>
@@ -178,11 +182,15 @@
                 </div>
                 <div class="checkbox">
                   <label>
-                    <input type="checkbox" value="Food service">
-                    <span>Food service
-                      
-
-
+                    <input type="checkbox" value="veg food only">
+                    <span>veg food only
+                    </span> 
+                   </label>
+                </div>
+                <div class="checkbox">
+                  <label>
+                    <input type="checkbox" value="both veg and non veg">
+                    <span>both veg and non veg
                     </span> 
                    </label>
                 </div>
@@ -209,7 +217,7 @@
       <div class="hostels row" id="hostels"> </div>
     </div>
 <!-- /.col-md-9 -->
-</div>
+      </div>
 <!-- /.container -->
 
       <script id="hostel-template" type="text/html">

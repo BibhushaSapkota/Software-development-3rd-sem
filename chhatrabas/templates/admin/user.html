@@ -1,0 +1,52 @@
+{% extends "admindashlayout.html" %}
+{% block content %}
+
+
+                <div class="mt-3">
+                    <h2 class="ml-3" style="color: #fff;">USER DETAILS</h2>
+                
+        
+                </div>
+                
+                <a href="/user/adduser">
+                    <button class="btn btn-success mb-2 ml-3"><i class="fa fa-plus mr-1"></i>Add User</button>
+               </a>
+
+                 <div class="table-responsive-md  table-responsive-sm ml-3 ">
+                     <table class="table table-bordered table-hover table-bordered table-striped">
+                         <thead class="thead bg-light">
+                            <tr>
+                                <th>username</th>
+                                <th>email</th>
+                                <th>password</th>
+                                <th></th>
+                                
+                            </tr>
+                         </thead>
+                         {% for user in users %}
+                            <tr class="tbody" style="color: #fff;">
+                        
+                                    <td>{{user.username}}</td>
+                                    <td>{{user.email}}</td>
+                                    <td>{{user.password}}</td>
+
+                                        
+                                 <td>
+                                     <a href="/user/edituser/{{user.id}}" style="color:green"><i class="fa fa-pencil-square fa-lg" ></i></a>
+                                     |
+                                     <a href="/user/deleteuser/{{user.id}}" style="color:red"><i class="fa fa-trash-o ml-2 fa-lg"></i></a>
+                                 </td>
+                                
+                            </tr>
+                         {% endfor %}
+                     </table>
+                 </div>
+
+                 <script type="text/javascript">
+                    $(function () {
+                        $('.mySidenav').find('.active').removeClass('active');
+                        $('#user').addClass('active');
+                    });
+                </script>
+
+{% endblock %}
