@@ -103,6 +103,7 @@ def contact(request):
         form.save()
         messages.info("your message has been submitted")
     return render(request,"contact.html")
+    
 
 def hostel(request):
     customers=Customer.objects.raw('select * from customer')
