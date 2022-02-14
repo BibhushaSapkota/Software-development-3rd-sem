@@ -10,6 +10,7 @@ class Hostel(models.Model):
     hostel_name=models.CharField(max_length=100)
     class Meta:
             db_table="hostel"
+            
 class Reviews(models.Model):
     username=models.CharField(max_length=200)
     hostelname=models.CharField(max_length=200)

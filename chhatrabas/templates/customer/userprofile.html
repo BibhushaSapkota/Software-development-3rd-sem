@@ -29,12 +29,14 @@
                         <div class="profile-side">
                             {% for user in users %}
                             <p class="mobile-no"><i class="fa fa-phone"></i>{{user.customer_phone}}</p>                            <p class="user-mail"><i class="fa fa-envelope-open"></i>{{user.customer_email}}</p>
-                            {% endfor %}
+                            
                         <div class="user-bio">
                             <h3>Bio</h3>
                             <p class="bio"> ajhbssh bjka khxkj hak jbx kuga oisxh oiahxxj zhskja kjsxka sxkahj salksj Hi my name is bibhusha sapkota . I am student of Softwarica.</p>
                         </div>
-                </div>
+                        <a href="/user/edit/{{user.customer_id}}" style="color:green"><i class="fa fa-pencil-square fa-lg" ></i>{{user.customer_id}}</a>
+                            {% endfor %}
+                    </div>
                 </div>
                 <div class="col-lg-9 right-side" style="color:white;">
                     <button  class="btn btn-primary" onclick="bookmark()">Your bookmark</button>
