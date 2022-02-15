@@ -393,4 +393,39 @@ button.chatbtn i,button.createbtn i {
     }
   } 
 
-
+  .slider .slider-item{
+    display: none;
+    animation: reveal .5s ease-in-out;
+  }
+  .slider .slider-item.active {
+    display: block;
+  }
+  .slider .dots {
+    text-align: center;
+    padding: 10px;
+  }
+  .slider .dots li {
+    cursor: pointer;
+    display: inline-block;
+    background: #333;
+    color: #fff;
+    padding: 7px 11px;
+    line-height: .5;
+    border-radius: 50%;
+    text-indent: -9999px;
+    opacity: .5;
+    -webkit-transition: opacity .2s;
+    -o-transition: opacity .2s;
+    transition: opacity .2s;
+  }
+  .slider .dots li.active{
+    opacity: 1;
+  }
+  @keyframes reveal{
+    from{
+      opacity: 0;
+    }
+    to{
+      opacity: 1;
+    }
+  }

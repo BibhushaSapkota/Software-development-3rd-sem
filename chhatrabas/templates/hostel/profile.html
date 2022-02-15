@@ -128,12 +128,21 @@
                             <p>Review no 3</p>
                             <p id="review3"></p>
                         </div>
-                        <div class=" profile-setting tab">
+                        <div class="col-lg-12 profile-setting tab">
                             <h1> Images</h1>
                             <p>
-                                <img class="col-md-4" height="220" src="" alt="" id="img1">
-                                <img class="col-md-4" height="220" src="" alt="" id="img2">
-                                <img class="col-md-4" height="220" src="" alt="" id="img3">
+                                
+                                <div class="col-lg-12 container">
+                                    <div id="slider" class="slider">
+                                      <div class="slider-item active"><img src="" alt="" id="img1" class="img-fluid"></div>
+                                      <div class="slider-item"><img src="" alt="" id="img2" class="img-fluid"></div>
+                                      <div class="slider-item"><img src="" alt="" id="img3" class="img-fluid"></div>
+                                      <ul id="dots" class="list-inline dots"></ul>
+                                    </div>
+                                    
+                            
+                                
+                                  </div>
                             </p>
                         </div>
                     </div>
@@ -143,6 +152,9 @@
         </div>
     </div>
     <script>
+        
+
+
         var b = JSON.parse(localStorage.getItem("hostel"));
         console.log(b)
         document.getElementById('user-name').innerText = b[1];
@@ -166,6 +178,42 @@
 
         document.getElementById("hostel_name").value = b[1];
         document.getElementById("price-hos").value = b[9];
+
+        var superSlide = function(slider) {
+  
+            this.sliderItems = slider.getElementsByTagName('div');
+            this.dots = slider.querySelector('.dots');
+            
+            this.init = function() {
+              for (i = 0; i < this.sliderItems.length; i++) {
+                var dot = document.createElement('li');
+                dot.classList.add('list-inline-item');
+                dot.setAttribute("data-slide-num", i);
+                dot.innerHTML = i;
+                dot.classList.add(i === 0 ? 'active' : 'inactive');
+                dot.addEventListener("click", this.runSlider.bind(this));
+                this.dots.appendChild(dot);
+              }
+            }
+            
+            this.runSlider = function(evt) {
+              var activeDot = evt.currentTarget;
+              var dnum = activeDot.dataset.slideNum;
+              for (i = 0; i < this.sliderItems.length; i++) {
+                var cssIdx = i + 1;
+                var inactiveDot = slider.querySelector('.list-inline-item:nth-child(' + cssIdx + ')');
+                this.sliderItems[i].classList.remove('active');
+                this.sliderItems[dnum].classList.add('active');
+                inactiveDot.classList.remove('active');
+                activeDot.classList.add('active');
+              }
+            }
+            
+            this.init()
+            
+          }
+          
+          var slider1 = new superSlide(document.getElementById('slider'))
 
     </script>
         <script src="https://code.jquery.com/jquery-3.3.1.min.js" crossorigin="anonymous"></script> 
