@@ -23,7 +23,7 @@
    	<form action="/customer/login" method="post" onsubmit="validateLoginForm(event)">
 		{% csrf_token %}
    			<label>Username</label>
-   			<input type="text" name="username">
+   			<input type="text" name="username" id="username">
    			<label>Password</label>
    			<input type="password" value="" id="inputPassword" name="password">
 			<div class="password">
@@ -40,6 +40,11 @@
 		</div>
 	</div>
 	</form>
+	<div class="messages" style="color: red;">
+		{% for message in messages %}
+		{{message}}
+		{% endfor %}
+	</div>
   </div>
 </body>
 </html>

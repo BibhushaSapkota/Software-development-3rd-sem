@@ -18,13 +18,17 @@ from django.contrib import messages
 def register(request):
     
     if request.method == "POST":
-        print(request.POST)
-        form = CustomerForm(request.POST)
-        form.save()
-        return redirect("/login")
+        username=request.POST['username']
+        if Customer.objects.filter(username=username).exists():
+            messages.error(request,'Username already exists')
+        else:
+            form = CustomerForm(request.POST)
+            form.save()
+            return redirect("/login")
     else:
+        print("invalid")
         form = CustomerForm()
-    return render(request, "customer/registration.html", {'form': form})
+    return render(request, "customer/registration.html")
 
 
 
@@ -35,20 +39,23 @@ def login_redirect(request):
 
         password=request.POST["password"]
         try:
-            customer=Customer.objects.get(username=username,password=password)
-            request.session['username']=request.POST['username']
-            request.session['password']=request.POST['password']
-            request.session['customer_id']=customer.customer_id
-            return redirect ('/')
-        except:
             user=User.objects.get(username=username,password=password)
-            request.session['username']=request.POST['username']
-            request.session['password']=request.POST['password']
             if user is not None:
+                request.session['username']=request.POST['username']
+                request.session['password']=request.POST['password'] 
                 return redirect('/user/admindash')
-            return render("/login")
+            
+        except:
+            try:
+                customer=Customer.objects.get(username=username,password=password)
+                request.session['username']=request.POST['username']
+                request.session['password']=request.POST['password']
+                request.session['customer_id']=customer.customer_id
+                return redirect ('/')
+            except:
+                messages.error(request, 'Invalid credentials') 
+                return redirect("/login")
     else:
-        messages.error(request, 'Username or password doesnt match')
         form=CustomerForm()
         print("invalid")
     return render(request,"customer/signin.html",{'form':form}) 

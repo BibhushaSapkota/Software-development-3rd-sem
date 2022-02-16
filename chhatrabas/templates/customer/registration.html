@@ -67,11 +67,17 @@
                             <input type="hidden" name="last_login" value="" id="last_login">
                             <input type="submit" name="submit" class="send-btn" value="Register">
 
-                            <p style="color: #FFF;">Already have an account&gt; <a href="login">Login here</a></p>
+                            <p style="color: #FFF;" > Already have an account ?<a href="login">Login here</a></p>
                             
                         </form>
+                        <div class="messages" style="color: red;" id="messages">
+                            {% for message in messages %}
+                                {{message}}
+                            {% endfor %}
+                        </div>
                     </div>
                     </div>
+                    
 
                 </div>
             </div>
