@@ -21,11 +21,12 @@
 body{
     height: 100%;
     width: 100%;
-    background:linear-gradient(135deg, #0D0628,#0D0628 );
-    background-repeat: no-repeat;
+    background: rgb(48,74,208);
+    background: radial-gradient(circle, rgba(48,74,208,1) 0%, rgba(11,93,110,1) 21%, rgba(6,29,80,1) 50%, rgba(48,7,98,1) 78%, rgba(10,19,85,1) 100%, rgba(252,70,107,1) 100%);
+    /* background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
-    background-attachment: fixed;
+    background-attachment: fixed; */
     margin: 0px;
     padding: 0px;
 }
@@ -33,7 +34,7 @@ body{
 
 .navbar
 {
-    background:rgba(0,0,0,0.2)
+  background:rgba(0,0,0,0.2)
 }
 .nav-link{
     font-size: 25px;
@@ -110,8 +111,7 @@ body{
   @media screen and (max-width: 700px) {
     body{
       height: 100%;
-      background: #7f5a83;
-      background-image: linear-gradient(315deg, #948196fb 5%, #214057 74%);
+      background-color: #0D0628;
       background-size: cover;
       
     }
@@ -147,6 +147,8 @@ body{
   .contact-section{
       width:100%;
       display: flex;
+      background-color: rgb(48,74,208);
+      background: radial-gradient(circle, rgba(48,74,208,1) 0%, rgba(11,93,110,1) 21%, rgba(6,29,80,1) 50%, rgba(48,7,98,1) 78%, rgba(10,19,85,1) 100%, rgba(252,70,107,1) 100%);
       justify-content: center;
       align-items: center;
       box-sizing: border-box;
@@ -468,7 +470,7 @@ section{
 }
 .banner{
   min-height:80vh;
-  background: url(hroom.jpg) no-repeat;
+  background: url('\static\img\hroom.jpg') no-repeat;
   background-size: cover;
   background-position: center;
   display: grid;
@@ -531,15 +533,14 @@ section{
   line-height: 1.9rem;
   padding:1rem 0;
 }
-.container1 .side-bar .box{
+.container1 .side-bar .boxx {
   border: var(--border);
   border-radius: .5rem;
-  overflow:hidden;
+  overflow: hidden;
   background: #fff;
   margin-bottom: 1.5rem;
-
 }
-.container1 .side-bar .box .title{
+.container1 .side-bar .boxx .title{
   padding: 1.5rem;
   font-size: 2rem;
   color: #fff;
@@ -547,18 +548,18 @@ section{
   text-transform: capitalize;
 
 }
-.container1 .side-bar .box .about{
+.container1 .side-bar .boxx .about{
   text-align: center;
   padding: 1rem 1.5rem;
 }
-.container1 .side-bar .box .about img{
+.container1 .side-bar .boxx .about img{
   height: 10rem;
   width: 10rem;
   border-radius: 50%;
   object-fit: cover;
   margin: 1rem 0;
 }
-.container1 .side-bar .box .about h3{
+.container1 .side-bar .boxx .about h3{
   color: var(--purple);
   font-size: 1.6rem;
 

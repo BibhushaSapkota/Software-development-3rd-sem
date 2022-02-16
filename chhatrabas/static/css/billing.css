@@ -10,7 +10,7 @@
 }
 body {
   color: var(--font-color);
-  background-color: #0D0628;
+  	background-color: #0D0628;
 	 background-attachment: fixed;
 	 background-repeat: no-repeat;
 	 font-family: 'Noto Sans', sans-serif;

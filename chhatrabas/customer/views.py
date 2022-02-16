@@ -76,7 +76,7 @@ def contact(request):
         form=ContactForm(request.POST)
         print(form)
         form.save()
-        messages.info(Message,"your message has been submitted")
+        messages.info(request,"your message has been submitted")
     return render(request,"contact.html")
 
 
@@ -128,3 +128,7 @@ def date_update(request,h_id):
     form=HostelupdateForm(request.POST, instance=hostel)
     form.save()
     return redirect ("/userprofile")
+
+def hroom(request):
+    return render(request,"/static/imhroom.jpg")
+

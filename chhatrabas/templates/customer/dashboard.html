@@ -1,0 +1,130 @@
+{% extends "homelayout.html" %}
+{% block content %}
+{% load static %}
+          <div class="row" >
+            <div class="col-lg-6 main" >
+              <div class="top" ><p><b>Find Your Perfect Next Stay</b></p>
+                <img src="{% static 'img/qq.png' %}" id="img1">
+              </div>
+                <div class="disc"><br>Now with chatrabas you can 
+                      find your next dream hostel at your finger tip.  Whether you're a student or someone looking for a place stay
+                      we got you covered!
+                      
+                </div>
+                
+                <div class="input-group justify-content-center">
+                  <div class="form-outline">
+                    <input type="search" id="form1" class="form-control" placeholder="Enter Hostel Name" style="font-size: 20px;"/>
+                  </div>
+                  <button type="button" class="btn btn-primary" style="font-size: 25px;margin-left: 20px; background-color:#7f5a83">
+                    <i class="fa fa-search">Search</i>
+                  </button>
+                </div>
+            </div>
+            <div class="col-lg-4 backgroundimg">
+              <img src="{% static 'img/qq.png' %}" style="height:75vh; width:100%;text-align:center;position:relative">
+            </div>
+          </div>
+            <div class="row">
+              <div class="col-lg-12 info1">
+                <p id="info1"><b>More then 1000 Listed Hostel</b></p>
+                  <br>
+                  <p id="info2">Available to you at your finger tips. So you can 
+                    never fail to find the one that's perfect for you. What are you 
+                    waiting for? Find your comfy room.
+                    
+                  </p>
+              </div>
+            </div>
+            <div class="row" id="num">
+              <section>
+                <div class="col-lg-12 container reveal">
+                  <div class="text-container">
+                    <div class="col-lg-3 text-box">
+                      <h3><b>1000+</b> </h3>
+                      <p style="padding:10px;">
+                      <b style="font-size:22px; text-align:justify;">Verified Hostels</b>
+                      <br>
+                      Every listed hostel are verified so you can choose any hostel you like.
+                      </p>
+                    </div>
+                    <div class="col-lg-3 text-box">
+                      <h3><b>15+</b> </h3>
+                      <p style="padding:10px;text-align:justify;">
+                        <b style="font-size:21px;">Hostel from major cities</b>
+                      <br>
+                        With hostels listed from more than 15 major cities
+                        you can find hostel from any popular city.
+                      </p>
+                    </div>
+                    <div class="col-lg-3 text-box">
+                      <h3><b>24/7</b> </h3>
+                      <p style="padding:10px;text-align:justify;">
+                        <b style="font-size:21px;">Available day and night</b>
+                      <br>
+                       our server is online 24/7 so book hostel at any time.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </section>
+              <section>
+                <div class="col-lg-12 container reveal">
+                  <div class="col-lg-12 info1">
+                    <p id="info1"><b>What we are trying to solve!!!</b></p>
+                      <br>
+                      <p id="info2">Our research has found some of the problems for finding hostel in the context of nepal. 
+                        Those problems which our website has over comed are shown below in a form of slides.
+                        
+                      </p>
+                  </div>
+                 
+                </div>
+              </section>
+
+
+              <section>
+                <div class="col-10 image">
+                  <div id="slider">
+                    <div id="line">
+                  
+                    </div>
+              
+                    <ul id="move">
+                      <li>
+                        <p id="info3"><b>Finding Location to stay.</b></p>
+                      <br>
+                      <p id="info4">Many of the people who do not have a clear view of 
+                        choosing a hostel from a new location. 
+                      </p>
+                        <img src="{% static 'img/sky1.png' %}">
+                      </li>
+                      
+                      <li>
+                        <img src="{% static 'img/sky1.png' %}">
+                      </li>
+                  
+                      <li>
+                        <img src="{% static 'img/sky.png' %}">
+                      </li>
+                     
+                    </ul>
+                    <div id="back">
+                      
+                    </div>
+                    <div id="forword">
+                      
+                    </div>
+                    <div id="dots">
+                      
+                    </div>
+                    
+                  </div>
+                     
+                </div>
+              </section>
+
+            </div>
+          
+{% endblock %}
+            
