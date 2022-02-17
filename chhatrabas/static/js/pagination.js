@@ -33,7 +33,7 @@ $(document).ready(function(){
       container: '#pagination',
       visiblePages: 5,
       perPage: {
-        values: [12, 15, 18],
+        values: [4, 6, 8],
         container: '#per_page'
       },
     }

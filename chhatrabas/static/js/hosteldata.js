@@ -1,13 +1,149 @@
 var hostels = [
   {
     "id": 1,
-    "name": "Everest hostel",
+    "name": "Daimen Boys Hostel",
     "reviews1": "It was the greatest value of any location where we lived, and we also got to know the best of our fellow travelers. The shared kitchen was an ideal place for assembly! One thing: don’t rely on your GPS to find the mill, because you’re going to be guided (if your GPS is the same as ours) across the river to a spot on the lane. Follow their directions on the website instead.",
     "reviews2": "best hostel ",
     "reviews3": "nice",
-    "rating": 5,
+    "rating": 4,
     "location": "Kathmandu,Balaju",
     "roommate": 1,
+    "Nearby": [
+      "Balaju school",
+      "Sunshine college",
+      "RJS engeneering college",
+      
+    ],
+    "Price": 14200,
+    "genre": [
+      "Boys only",
+      "Laundry service",
+      "Internet",
+      "24 hours water",
+      "24 hours electricity"
+    ],
+    "Status": "Verified",
+    "image": "/static/img/1.jpg",
+    "image1": "/static/img/2.jpg",
+    "image2": "/static/img/3.jpg",
+    "link": "profile.html",
+    "email":"daimen@gmail.com",
+    "contact":9841242424,
+    "bio":"Daimen Boys Hostel This is the best hostel you can find in the perfect location.",
+    "star":"★★★★",
+    "map":"https://maps.google.com/maps?ll=27.7012837,85.3373779&q=Daimen Boys Hostel&t=&z=14&ie=UTF8&iwloc=&output=embed"
+  },
+  {
+    "id": 2,
+    "name": "Thamel hostel",
+    "reviews1": "best location",
+    "reviews2": "We had such a great time at this hostel. The hostel overall was so lovely and clean and the staff were brilliant! Very friendly, approachable and helpful. The breakfast was nice and the rooms were great. ",
+    "reviews3": "nice",
+    "rating": 4,
+    "location": "Kathmandu,Thamel",
+    "roommate": 2,
+    "Nearby": [
+      "Thamel school",
+      "KIST college",
+      "Thamel engeneering college"
+    ],
+    "Price": 12200,
+    "genre": [
+      "Girls only",
+      "24 hours electricity",
+      "24 hours water",
+      "Internet",
+      "veg food only"
+    ],
+    "Status": "Verified",
+    "image": "/static/img/2.jpg",
+    "image1": "/static/img/3.jpg",
+    "image2": "/static/img/4.jpg",
+    "link": "profile.html",
+    "email":"thamel2020@gmail.com",
+    "contact":9841111111,
+    "bio":"Everest hostel This is the best hostel you can find in the perfect location.",
+    "star":"★★★★",
+    "map":"https://maps.google.com/maps?q=hostel%20in%20thamel&t=&z=13&ie=UTF8&iwloc=&output=embed" 
+  },
+  {
+    "id": 3,
+    "name": "Kathmandu Boys Hostel",
+    "reviews1": "best boys hostel",
+    "reviews2": "best hostel ",
+    "reviews3": "nice",
+    "rating": 5,
+    "location": "Kathmandu",
+    "roommate": 4,
+    "Nearby": [
+      "Banepa school",
+      "Banepa nist college",
+      "Banepa engeneering college",
+      
+    ],
+    "Price": 15000,
+    "genre": [
+      "Both girls and boys",
+      "24 hours electricity",
+      "24 hours water",
+      "both veg and non veg",
+      "laundry service"
+    ],
+    "Status": "Verified",
+    "image": "/static/img/3.jpg",
+    "image1": "/static/img/4.jpg",
+    "image2": "/static/img/5.jpg",
+    "link": "profile.html",
+    "email":"everest2020@gmail.com",
+    "contact":9841222222,
+    "bio":"Everest hostel This is the best hostel you can find in the perfect location.",
+    "star":"★★★★★",
+    "map":"https://maps.google.com/maps?q=boys%20hostel,kathmandu&t=&z=13&ie=UTF8&iwloc=&output=embed"
+    
+  },
+  {
+    "id": 4,
+    "name": "Royale hostel",
+    "reviews1": "It was the greatest value of any location where we lived, and we also got to know the best of our fellow travelers. The shared kitchen was an ideal place for assembly! One thing: don’t rely on your GPS to find the mill, because you’re going to be guided (if your GPS is the same as ours) across the river to a spot on the lane. Follow their directions on the website instead.",
+    "reviews2": "best hostel ",
+    "reviews3": "nice",
+    "rating": 4,
+    "location": "Kathmandu,Thamel",
+    "roommate": 3,
+    "Nearby": [
+      "Grand school",
+      "royale college",
+      "NCCS engeneering college",
+      "Laundry service"
+    ],
+    "Price": 19200,
+    "genre": [
+      "Boys only",
+      "24 hours electricity",
+      "both veg and non veg",
+      "24 hours water supply",
+      "Internet"
+    ],
+    "Status": "Verified",
+    "image": "/static/img/4.jpg",
+    "image1": "/static/img/5.jpg",
+    "image2": "/static/img/6.jpg",
+    "link": "profile.html",
+    "email":"royale@gmail.com",
+    "contact":984133333,
+    "bio":"Royale hostel This is the best hostel you can find in the perfect location.",
+    "star":"★★★★"
+    
+  },
+  {
+    "id": 5,
+    "name": "Janaki hostel",
+    "reviews1": "It was the greatest value of any location where we lived, and we also got to know the best of our fellow travelers. The shared kitchen was an ideal place for assembly! One thing: don’t rely on your GPS to find the mill, because you’re going to be guided (if your GPS is the same as ours) across the river to a spot on the lane. Follow their directions on the website instead.",
+    "reviews2": "best hostel ",
+    "reviews3": "nice",
+    "rating": 3,
+    "location": "Janakpur,Janaki mandir",
+    "roommate": 4,
     "Nearby": [
       "Balaju school",
       "Sunshine college",
@@ -15,13 +151,204 @@ var hostels = [
     ],
     "Price": 14200,
     "genre": [
-      "Girls only",
+      "Boys only",
       "24 hours electricity",
-      "veg food only"
+      "veg food only",
+      "24 hours water",
+      "Internet"
     ],
     "Status": "Verified",
-    "image": "/static/img/1.jpg",
-    "image1": "/static/img/2.jpg",
+    "image": "/static/img/5.jpg",
+    "image1": "/static/img/6.jpg",
+    "image2": "/static/img/7.jpg",
+    "link": "profile.html",
+    "email":"janakpur2020@gmail.com",
+    "contact":9841444444,
+    "bio":"Everest hostel This is the best hostel you can find in the perfect location.",
+    "star":"★★★" 
+  },
+  {
+    "id": 6,
+    "name": "Pokhara Youth Hostel",
+    "reviews1": "It was the greatest value of any location where we lived, and we also got to know the best of our fellow travelers. The shared kitchen was an ideal place for assembly! One thing: don’t rely on your GPS to find the mill, because you’re going to be guided (if your GPS is the same as ours) across the river to a spot on the lane. Follow their directions on the website instead.",
+    "reviews2": "best hostel ",
+    "reviews3": "nice",
+    "rating": 5,
+    "location": "Pokhara",
+    "roommate": 1,
+    "Nearby": [
+      "pokhara school",
+      "lakeside college",
+      "Nepal engeneering college"
+    ],
+    "Price": 8000,
+    "genre": [
+      "Both girls and boys",
+      "24 hours electricity",
+      "both veg and non veg",
+      "24 hours water",
+      "Laundry service"
+    ],
+    "Status": "Verified",
+    "image": "/static/img/6.jpg",
+    "image1": "/static/img/7.jpg",
+    "image2": "/static/img/8.jpg",
+    "link": "profile.html",
+    "email":"pokhara2020@gmail.com",
+    "contact":984155555,
+    "bio":"Everest hostel This is the best hostel you can find in the perfect location.",
+    "star":"★★★★★"
+    
+  },
+  {
+    "id": 7,
+    "name": "yog hostel",
+    "reviews1": "It was the greatest value of any location where we lived, and we also got to know the best of our fellow travelers. The shared kitchen was an ideal place for assembly! One thing: don’t rely on your GPS to find the mill, because you’re going to be guided (if your GPS is the same as ours) across the river to a spot on the lane. Follow their directions on the website instead.",
+    "reviews2": "best hostel",
+    "reviews3": "nice",
+    "rating": 2,
+    "location": "Kathmandu",
+    "roommate": 3,
+    "Nearby": [
+      "Darwin school",
+      "Sunshine college",
+      "RJS engeneering college"
+    ],
+    "Price": 10000,
+    "genre": [
+      "Boys only",
+      "24 hours electricity",
+      "24 hours water",
+      "veg food only",
+      "Internet"
+    ],
+    "Status": "Verified",
+    "image": "/static/img/7.jpg",
+    "image1": "/static/img/8.jpg",
+    "image2": "/static/img/9.jpg",
+    "link": "profile.html",
+    "email":"yog@gmail.com",
+    "contact":984124444,
+    "bio":"yog hostel This is the best hostel you can find in the perfect location.",
+    "star":"★★"
+  },
+  {
+    "id": 8,
+    "name": "Friday Hostel",
+    "reviews1": "It was the greatest value of any location where we lived, and we also got to know the best of our fellow travelers. The shared kitchen was an ideal place for assembly! One thing: don’t rely on your GPS to find the mill, because you’re going to be guided (if your GPS is the same as ours) across the river to a spot on the lane. Follow their directions on the website instead.",
+    "reviews2": "best hostel ",
+    "reviews3": "nice",
+    "rating": 4,
+    "location": "Kathmandu,Balaju",
+    "roommate": 2,
+    "Nearby": [
+      "Baneshwor school",
+      "Kathmandu engeneering college"
+    ],
+    "Price": 9000,
+    "genre": [
+      "Boys only",
+      "24 hours electricity",
+      "veg food only",
+      "Laundry service",
+      "Internet"
+    ],
+    "Status": "Verified",
+    "image": "/static/img/8.jpg",
+    "image1": "/static/img/9.jpg",
+    "image2": "/static/img/10.jpg",
+    "link": "profile.html",
+    "email":"everest2020@gmail.com",
+    "contact":984147898,
+    "bio":"Everest hostel This is the best hostel you can find in the perfect location.",
+    "star":"★★★★"
+  },
+  {
+    "id": 9,
+    "name": "Birds Nest Hostel",
+    "reviews1": "It was the greatest value of any location where we lived, and we also got to know the best of our fellow travelers. The shared kitchen was an ideal place for assembly! One thing: don’t rely on your GPS to find the mill, because you’re going to be guided (if your GPS is the same as ours) across the river to a spot on the lane. Follow their directions on the website instead.",
+    "reviews2": "best hostel ",
+    "reviews3": "nice",
+    "rating": 1,
+    "location": "Chabel",
+    "roommate": 2,
+    "Nearby": [
+      "chabel school",
+      "Golden future college"
+    ],
+    "Price": 11000,
+    "genre": [
+      "Boys only",
+      "24 hours electricity",
+      "24 hours water",
+      "Internet",
+      "Laundry service"
+    ],
+    "Status": "Verified",
+    "image": "/static/img/9.jpg",
+    "image1": "/static/img/10.jpg",
+    "image2": "/static/img/11.jpg",
+    "link": "profile.html",
+    "email":"everest2020@gmail.com",
+    "contact":9841242424,
+    "bio":"Everest hostel This is the best hostel you can find in the perfect location.",
+    "star":"★"
+  },
+  {
+    "id": 10,
+    "name": "8848 Hostel",
+    "reviews1": "It was the greatest value of any location where we lived, and we also got to know the best of our fellow travelers. The shared kitchen was an ideal place for assembly! One thing: don’t rely on your GPS to find the mill, because you’re going to be guided (if your GPS is the same as ours) across the river to a spot on the lane. Follow their directions on the website instead.",
+    "reviews2": "best hostel ",
+    "reviews3": "nice",
+    "rating": 5,
+    "location": "Solukhumbu",
+    "roommate": 1,
+    "Nearby": [
+      "8848 school"
+    ],
+    "Price": 18000,
+    "genre": [
+      "Boys only",
+      "24 hours electricity",
+      "24 hours water",
+      "veg food only",
+      "Laundry service"
+    ],
+    "Status": "Verified",
+    "image": "/static/img/10.jpg",
+    "image1": "/static/img/11.jpg",
+    "image2": "/static/img/12.jpg",
+    "link": "profile.html",
+    "email":"everest2020@gmail.com",
+    "contact":9841242424,
+    "bio":"8848 hostel This is the best hostel you can find in the perfect location.",
+    "star":"★★★★★",
+    "map":"https://maps.google.com/maps?q=8848%20hostel,%20kathmandu&t=&z=13&ie=UTF8&iwloc=&output=embed"
+  },
+  {
+    "id": 11,
+    "name": "Hyatt Regency Kathmandu",
+    "reviews1": "It was the greatest value of any location where we lived, and we also got to know the best of our fellow travelers. The shared kitchen was an ideal place for assembly! One thing: don’t rely on your GPS to find the mill, because you’re going to be guided (if your GPS is the same as ours) across the river to a spot on the lane. Follow their directions on the website instead.",
+    "reviews2": "best hostel ",
+    "reviews3": "nice",
+    "rating": 5,
+    "location": "Kathmandu,Balaju",
+    "roommate": 1,
+    "Nearby": [
+      "Little school",
+      "BBS engeneering college"
+    ],
+    "Price": 19000,
+    "genre": [
+      "Boys only",
+      "24 hours electricity",
+      "24 hours water",
+      "both veg and non veg",
+      "Laundry service"
+    ],
+    "Status": "Verified",
+    "image": "/static/img/11.jpg",
+    "image1": "/static/img/12.jpg",
     "image2": "/static/img/1.jpg",
     "link": "profile.html",
     "email":"everest2020@gmail.com",
@@ -30,139 +357,34 @@ var hostels = [
     "star":"★★★★★"
   },
   {
-    "id": 2,
-    "name": "Godfather hostel",
-    "reviews": "Excellent service. A fantastic run hostel with outstanding service. This is a great find and staff are fantastic Recommend highly",
+    "id": 12,
+    "name": "Vivanta Hostel",
+    "reviews1": "It was the greatest value of any location where we lived, and we also got to know the best of our fellow travelers. The shared kitchen was an ideal place for assembly! One thing: don’t rely on your GPS to find the mill, because you’re going to be guided (if your GPS is the same as ours) across the river to a spot on the lane. Follow their directions on the website instead.",
+    "reviews2": "best hostel ",
+    "reviews3": "nice",
     "rating": 4,
-    "location": "Pokhara,Fulbari",
-    "roommate": 2,
+    "location": "Kathmandu",
+    "roommate": 3,
     "Nearby": [
-      "Sunrise school",
-      "Pokhara campus"
+      "Gitanjali school",
+      "NIST engeneering college"
     ],
-    "Price": 17500,
+    "Price": 7000,
     "genre": [
       "Boys only",
-      "24 hours water",
-      "both veg and non veg"
-    ],
-    "Status": "Verified",
-    "image": "/static/img/2.jpg",
-    "link": "https://www.facebook.com/"
-    
-  },
-  {
-    "id": 3,
-    "name": "Queen hostel",
-    "reviews": "A decent, well-run former mill site working well as a modern hostel.",
-    "rating": 3,
-    "location": "Kathmandu, Thamel",
-    "roommate": 4,
-    "Nearby": [
-      "Royale school",
-      "JKS collge",
-      "Amrit campus"
-    ],
-    "Price": 20000,
-    "genre": [
-      "Both",
-      "24 hours water",
       "24 hours electricity",
-      "Internet",
-      "Laundry service",
-    
-    ],
-    "Status": "Verified",
-    "image": "1992-08-23T10:29:29+05:30",
-    "link": "Al Pacino"
-    
-  },
-  {
-    "id": 4,
-    "name": "Palpali hostel",
-    "reviews": "I was really satisified with my stay in Tullyarvan Hostel and it was a pleasure to have met such helpful staff as Michael and Angela. My short stay was made so productive by their expertise and helpfulness.",
-    "rating": 1,
-    "location": "Palpa, Dadagau",
-    "roommate": 2,
-    "Nearby": [
-      "Buddha accademy",
-      "Palpali college"
-    ],
-    "Price": 15400,
-    "genre": [
-      "Both",
-      "24 hours electricity",
-      "Internet",
-      "Laundry service",
-      "Food service",
-      "veg food only"
-    ],
-    "Status": "Verified",
-    "image": "1994-02-09T10:29:29+05:30",
-    "link": "John Travolta",
-    
-  },
-  {
-    "id": 5,
-    "name": "Star hostel",
-    "reviews": "Once again we had a very good stay at Tulyarvan mill. The location is perfect for the areas we wished to visit. The room was nice and clean and facilities for cooking more than sufficient and the shared areas were kept clean while we were there at all times. There was no noise nor disturbances . Staff were available and helpful. We will definitely choose to come back again.",
-    "rating": 2,
-    "location": "Dhangadi, Fish market",
-    "roommate": 4,
-    "Nearby": [
-      "Gautam buddha school",
-      "CG college"
-    ],
-    "Price": 16100,
-    "genre": [
-      "Girls only",
-      "Laundry service",
-      "Food service"
-    ],
-    "Status": "Verified",
-    "image": "1980-10-05T10:29:29+05:30",
-    "link": "Clint Eastwood" 
-  },
-  {
-    "id": 6,
-    "name": "Dark Knight Hostel",
-    "reviews": "Brilliant double room spotless!, great kitchen area. First time staying in a hostel in Ireland and it wont be the last. Great staff! great price! would stay again. Our first stop on our W.A.W. adventure.",
-    "rating": 3,
-    "location": "Kathmandu, Shyambhu",
-    "roommate": 1,
-    "Nearby": [
-      "Everest engeneering college",
-      "RBS school"
-    ],
-    "Price": 15200,
-    "genre": [
-      "Girls only",
+      "24 hours water",
+      "veg food only",
       "Laundry service"
-   
     ],
     "Status": "Verified",
-    "image": "2002-09-14T10:29:29+05:30",
-    "link": "Christian Bale"
-    
-  },
-  {
-    "id": 7,
-    "name": "Royale hostel",
-    "reviews": "Lovely staff, big, quiet rooms, free towel. Not a money making scheme like some places, but a good honest hostel!",
-    "rating": 4,
-    "location": "Kathmandu, Lainchwor",
-    "roommate": 2,
-    "Nearby": [
-      "NIST college",
-      "Sarshoti campus"
-    ],
-    "Price": 9600,
-    "genre": [
-      "Boys only",
-      "Laundry service",
-      "Food service"
-    ],
-    "Status": "Verified",
-    "image": "1993-11-21T10:29:29+05:30",
-    "link": "Henry Fonda"
-  }]
+    "image": "/static/img/12.jpg",
+    "image1": "/static/img/1.jpg",
+    "image2": "/static/img/2.jpg",
+    "link": "profile.html",
+    "email":"everest2020@gmail.com",
+    "contact":9841242424,
+    "bio":"Everest hostel This is the best hostel you can find in the perfect location.",
+    "star":"★★★★"
+  }
+]
