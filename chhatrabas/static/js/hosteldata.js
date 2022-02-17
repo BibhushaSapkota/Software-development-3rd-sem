@@ -68,7 +68,7 @@ var hostels = [
   },
   {
     "id": 3,
-    "name": "Kathmandu Boys Hostel",
+    "name": "Kathmandu Hostel",
     "reviews1": "best boys hostel",
     "reviews2": "best hostel ",
     "reviews3": "nice",
