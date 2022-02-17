@@ -89,21 +89,12 @@
                             <li onclick="tabs(0)"class="information active"> Information</li>
                             <li onclick="tabs(1)"class="review">Reviews</li>
                             <li onclick="tabs(2)"class="settings">Images</li>
+                            <li onclick="tabs(3)" class="map">Map</li>
                         </ul>
                     </div>
                     <div class="profile-body" style="color: rgb(255, 255, 255);">
                         <div class="profile-posts tab">
-                            <div class="map">
-                                <div class="mapouter" style="float:right;"><div class="gmap_canvas"><iframe width="300" height="283" id="gmap_canvas"
-
-                                    src="https://maps.google.com/maps?ll=27.7012837,85.3373779&q=Daimen Boys Hostel&t=&z=14&ie=UTF8&iwloc=&output=embed"
-                                    
-                                    frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe><a href="https://techwithlove.com/how-to-know-who-viewed-my-whatsapp-profile/">
-                                    
-                                        TechWithLove</a></div><style>.mapouter{position:relative;text-align:right;height:283px;width:300px;}.gmap_canvas
-                                    
-                                    {overflow:hidden;background:none!important;height:283px;width:300px;}</style></div>
-                            </div>
+                            
                             <h1>Information</h1>
                             <p>
                                 The information listed are all validated or verified so no need to worry about the information. All the information are gathered from google. 
@@ -117,6 +108,7 @@
                             <p id="features"></p>
                             
                         </div>
+                        
                         <div class="profile-review tab">
                             
                             <a href="/hostel/review"><button> Write a review</button></a>
@@ -134,7 +126,7 @@
                                 
                                 <div class="col-lg-12 container">
                                     <div id="slider" class="slider">
-                                      <div class="slider-item active"><img src="" alt="" id="img1" class="img-fluid"></div>
+                                      <div class="slider-item active"><img src="" alt="" id="img1" class="img-fluid" height="100px"></div>
                                       <div class="slider-item"><img src="" alt="" id="img2" class="img-fluid"></div>
                                       <div class="slider-item"><img src="" alt="" id="img3" class="img-fluid"></div>
                                       <ul id="dots" class="list-inline dots"></ul>
@@ -145,6 +137,17 @@
                                   </div>
                             </p>
                         </div>
+                        <div class="col-lg-12 profile-map tab container-fluid">
+                            <div class="row  justify-content-center">
+                            <div class="col-lg-12 container-fluid mapouter"><div class="gmap_canvas container-fluid">
+                                <iframe width="100%" height="400px" id="gmap_canvas"
+                                 src="https://maps.google.com/maps?q=Daimen%20boys%20hostel&t=&z=17&ie=UTF8&iwloc=&output=embed" 
+                                 frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe><a href="https://123movies-to.org">
+                                     123movies</a><br><style>.mapouter{position:relative;text-align:right;height:400px;width:100%;}</style>
+                                     <a href="https://www.embedgooglemap.net">google maps embed iframe generator</a>
+                                     <style>.gmap_canvas {overflow:hidden;background:none!important;height:400px;width:100%;}</style></div></div>
+                        </div>
+                    </div>
                     </div>
                 </div>
             </div>
@@ -159,7 +162,7 @@
         console.log(b)
         document.getElementById('user-name').innerText = b[1];
         document.getElementById('Country').innerText = b[6];
-        document.getElementById("profImg").src = b[13];
+        document.getElementById("profImg").src = b[12];
         document.getElementById("mobile-no").innerText = b[17];
         document.getElementById("user-mail").innerText = b[16];
         document.getElementById("bio").innerText = b[18];
@@ -175,6 +178,8 @@
         document.getElementById("img1").src =b[12];
         document.getElementById("img2").src =b[13];
         document.getElementById("img3").src =b[14];
+        document.getElementById("gmap_canvas").src =b[20];
+        
 
         document.getElementById("hostel_name").value = b[1];
         document.getElementById("price-hos").value = b[9];
