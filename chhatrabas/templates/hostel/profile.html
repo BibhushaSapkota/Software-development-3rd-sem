@@ -62,7 +62,7 @@
                             <input type="text" name="price" id="price-hos"  class="text-box">
                         </div>
                 
-                        <input type="submit" name="submit" value="Bookmark" class="chatbtn" style="background-color:green;">                   
+                        <input type="submit" name="submit" value="Bookmark" style="background-color:green;height">                   
                         </form>
                         <button class="chatbtn">
                             <i class="fa fa-comment"></i>Chat                        
@@ -92,10 +92,10 @@
                             <li onclick="tabs(3)" class="map">Map</li>
                         </ul>
                     </div>
-                    <div class="profile-body" style="color: rgb(255, 255, 255);">
-                        <div class="profile-posts tab">
-                            
-                            <h1>Information</h1>
+                    <div class="profile-body" style="color:white;">
+                        <div class="profile-posts tab"> 
+                            <h1 style="text-align:center;color:white;">Information</h1>
+                            <div class="infor">
                             <p>
                                 The information listed are all validated or verified so no need to worry about the information. All the information are gathered from google. 
                                 The information are also legid.
@@ -106,12 +106,15 @@
                             <p id="nearby"></p>
                             <p>The parioritized features of the hostel are :</p>
                             <p id="features"></p>
+                        </div>
                             
                         </div>
                         
                         <div class="profile-review tab">
-                            
-                            <a href="/hostel/review"><button> Write a review</button></a>
+                            <div class="wrap">
+                                <a href="/hostel/review"><button class="button "><b>Write a review</b></button></a>
+                              </div>
+                            <div class=" infor">
                             <h1>User Reviews</h1>
                             <p>Review no 1</p>
                             <p id="review1"></p>
@@ -119,6 +122,7 @@
                             <p id="review2"></p>
                             <p>Review no 3</p>
                             <p id="review3"></p>
+                            </div>
                         </div>
                         <div class="col-lg-12 profile-setting tab">
                             <h1> Images</h1>
@@ -139,9 +143,10 @@
                         </div>
                         <div class="col-lg-12 profile-map tab container-fluid">
                             <div class="row  justify-content-center">
+                                <h1>.............Map.............</h1>
                             <div class="col-lg-12 container-fluid mapouter"><div class="gmap_canvas container-fluid">
                                 <iframe width="100%" height="400px" id="gmap_canvas"
-                                 src="https://maps.google.com/maps?q=Daimen%20boys%20hostel&t=&z=17&ie=UTF8&iwloc=&output=embed" 
+                                 src="" 
                                  frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe><a href="https://123movies-to.org">
                                      123movies</a><br><style>.mapouter{position:relative;text-align:right;height:400px;width:100%;}</style>
                                      <a href="https://www.embedgooglemap.net">google maps embed iframe generator</a>

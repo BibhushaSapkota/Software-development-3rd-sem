@@ -5,7 +5,7 @@ var hostels = [
     "reviews1": "It was the greatest value of any location where we lived, and we also got to know the best of our fellow travelers. The shared kitchen was an ideal place for assembly! One thing: don’t rely on your GPS to find the mill, because you’re going to be guided (if your GPS is the same as ours) across the river to a spot on the lane. Follow their directions on the website instead.",
     "reviews2": "best hostel ",
     "reviews3": "nice",
-    "rating": 5,
+    "rating": 4,
     "location": "Kathmandu,Balaju",
     "roommate": 1,
     "Nearby": [
@@ -30,14 +30,14 @@ var hostels = [
     "email":"daimen@gmail.com",
     "contact":9841242424,
     "bio":"Daimen Boys Hostel This is the best hostel you can find in the perfect location.",
-    "star":"★★★★★",
+    "star":"★★★★",
     "map":"https://maps.google.com/maps?ll=27.7012837,85.3373779&q=Daimen Boys Hostel&t=&z=14&ie=UTF8&iwloc=&output=embed"
   },
   {
     "id": 2,
-    "name": "Everest",
+    "name": "Thamel hostel",
     "reviews1": "best location",
-    "reviews2": "best hostel ",
+    "reviews2": "We had such a great time at this hostel. The hostel overall was so lovely and clean and the staff were brilliant! Very friendly, approachable and helpful. The breakfast was nice and the rooms were great. ",
     "reviews3": "nice",
     "rating": 4,
     "location": "Kathmandu,Thamel",
@@ -63,17 +63,17 @@ var hostels = [
     "email":"thamel2020@gmail.com",
     "contact":9841111111,
     "bio":"Everest hostel This is the best hostel you can find in the perfect location.",
-    "star":"★★★★"
-    
+    "star":"★★★★",
+    "map":"https://maps.google.com/maps?q=hostel%20in%20thamel&t=&z=13&ie=UTF8&iwloc=&output=embed" 
   },
   {
     "id": 3,
-    "name": "Boys Hostel",
+    "name": "Kathmandu Boys Hostel",
     "reviews1": "best boys hostel",
     "reviews2": "best hostel ",
     "reviews3": "nice",
     "rating": 5,
-    "location": "Banepa,Balaju",
+    "location": "Kathmandu",
     "roommate": 4,
     "Nearby": [
       "Banepa school",
@@ -97,7 +97,8 @@ var hostels = [
     "email":"everest2020@gmail.com",
     "contact":9841222222,
     "bio":"Everest hostel This is the best hostel you can find in the perfect location.",
-    "star":"★★★★★"
+    "star":"★★★★★",
+    "map":"https://maps.google.com/maps?q=boys%20hostel,kathmandu&t=&z=13&ie=UTF8&iwloc=&output=embed"
     
   },
   {
@@ -321,7 +322,8 @@ var hostels = [
     "email":"everest2020@gmail.com",
     "contact":9841242424,
     "bio":"8848 hostel This is the best hostel you can find in the perfect location.",
-    "star":"★★★★★"
+    "star":"★★★★★",
+    "map":"https://maps.google.com/maps?q=8848%20hostel,%20kathmandu&t=&z=13&ie=UTF8&iwloc=&output=embed"
   },
   {
     "id": 11,
