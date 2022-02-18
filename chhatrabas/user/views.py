@@ -28,17 +28,20 @@ def admindash(request):
     customer=Customer.objects.all().count()
     booking=Billing.objects.all().count()
 
-    customers=Customer.objects.raw("select * from customer limit 4 offset % s",[offset])
+    customers=Customer.objects.raw("select * from customer limit 8 offset % s",[offset])
     pageItem=len(customers)
     return render(request,"admin/admindash.html",{'customers':customers,'reviews':reviews,'customer':customer,'booking':booking,'page':page,'pageItem':pageItem})
 
 
 def search(request):
+    reviews=Reviews.objects.all().count()
+    customer=Customer.objects.all().count()
+    booking=Billing.objects.all().count()
     customers=Customer.objects.filter(username=request.POST['search'])
     count=Customer.objects.count()
     if (count>1):
-        return render(request, "admin/search1.html", {'customers': customers})
-    return render(request,"admin/search.html",{'customers':customers})
+        return render(request, "admin/search1.html", {'customers': customers, 'reviews':reviews,'customer':customer,'booking':booking})
+    return render(request,"admin/search.html",{'customers':customers,'reviews':reviews,'customer':customer,'booking':booking})
 
 
 def edit(request,p_id):
