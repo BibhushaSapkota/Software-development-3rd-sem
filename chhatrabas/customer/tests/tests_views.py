@@ -9,11 +9,16 @@ class TestViews(TestCase):
 
     def setUp(self):
         self.client=Client()
-        self.register_url=reverse('register')
-
 
     def test_register_GET(self):
-        response=self.client.get(self.register_url)
+        response=self.client.get(reverse('register'))
         self.assertEquals(response.status_code,200)
         self.assertTemplateUsed(response,'customer/registration.html')
+
+    def test_login_GET(self):
+        response=self.client.get(reverse('login'))
+        self.assertEquals(response.status_code,200)
+        self.assertTemplateUsed(response,'customer/signin.html')
+
+    
 

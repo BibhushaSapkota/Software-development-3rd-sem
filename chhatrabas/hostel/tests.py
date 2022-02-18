@@ -1,20 +1,20 @@
-from django.test import SimpleTestCase
-from django.test import SimpleTestCase
+from django.test import SimpleTestCase,Client
 from django.urls import reverse,resolve
 from hostel.views import *
 
 class TestUrls(SimpleTestCase):
-    def test_register_url_is_resolved(self):
-        url=reverse('register')
-        print(resolve(url))
-        self.assertEquals(resolve(url).func, register)
+    def test_book_url_is_resolved(self):
+        url=reverse('hostelbook')
+        self.assertEquals(resolve(url).func, hostelbook)
 
-    def test_login_url_is_resolved(self):
-        url=reverse('login')
-        print(resolve(url))
-        self.assertEquals(resolve(url).func, login_redirect)
+    def test_review_url_is_resolved(self):
+        url=reverse('review')
+        self.assertEquals(resolve(url).func, hostelreview)
 
-    def test_dashboard_url_is_resolved(self):
-        url=reverse('dashboard')
-        print(resolve(url))
-        self.assertEquals(resolve(url).func, dashboard)
+class TestViews(SimpleTestCase):
+    def setUp(self):
+        self.client=Client()
+    def test_review_GET(self):
+        response=self.client.get(reverse('review'))
+        self.assertEquals(response.status_code,200)
+        self.assertTemplateUsed(response,"hostel/review.html")

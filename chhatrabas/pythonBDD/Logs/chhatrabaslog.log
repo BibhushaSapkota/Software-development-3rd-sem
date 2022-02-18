@@ -1,9 +1,9 @@
-17-Feb-22 15:04:05 -
+18-Feb-22 13:43:40 -
 
-17-Feb-22 15:04:05 -====== WebDriver manager ======
-17-Feb-22 15:04:05 -Current google-chrome version is 98.0.4758
-17-Feb-22 15:04:05 -Get LATEST chromedriver version for 98.0.4758 google-chrome
-17-Feb-22 15:04:06 -Driver [C:\Users\Acer\.wdm\drivers\chromedriver\win32\98.0.4758.102\chromedriver.exe] found in cache
+18-Feb-22 13:43:40 -====== WebDriver manager ======
+18-Feb-22 13:43:40 -Current google-chrome version is 98.0.4758
+18-Feb-22 13:43:40 -Get LATEST chromedriver version for 98.0.4758 google-chrome
+18-Feb-22 13:43:40 -Driver [C:\Users\Acer\.wdm\drivers\chromedriver\win32\98.0.4758.102\chromedriver.exe] found in cache
 -chrome
 Driver [C:\Users\Acer\.wdm\drivers\chromedriver\win32\98.0.4758.102\chromedriver.exe] found in cache
 Driver [C:\Users\Acer\.wdm\drivers\chromedriver\win32\98.0.4758.102\chromedriver.exe] found in cache
