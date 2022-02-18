@@ -75,7 +75,7 @@ body{
     width: 100%;
     margin-left:0px;
     height: 600px;
-    padding: 20px;
+    padding: 2rem !important;
     border-radius: 50px;
     margin-bottom: 50px;
     background:rgba(255, 255, 255,0.2)
