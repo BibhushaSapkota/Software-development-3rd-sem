@@ -35,6 +35,11 @@
                             <textarea name="message" rows="5" placeholder="Your message" required></textarea>
                             <input type="submit" name="submit" class="send-btn" value="Send">
                         </form>
+                        <ul class="messages">
+                            {% for message in messages %}
+                            <li>{{message}}</li>
+                            {% endfor %}
+                        </ul>
                     </div>
                     </div>
 

@@ -6,6 +6,7 @@ from authenticate import Authentication
 from customer.forms import CustomerForm, BillingForm,ContactForm
 from hostel.forms import *
 from customer.models import Customer
+from customer.models import Billing
 from hostel.models import Hostel
 from django.contrib import auth
 from django.contrib.auth import login,logout
@@ -16,15 +17,18 @@ from django.contrib import messages
 
 # Create your views here.
 def register(request):
-    
     if request.method == "POST":
-        print(request.POST)
-        form = CustomerForm(request.POST)
-        form.save()
-        return redirect("/login")
+        username=request.POST['username']
+        if Customer.objects.filter(username=username).exists():
+            messages.error(request,'Username already exists')
+        else:
+            form = CustomerForm(request.POST)
+            form.save()
+            return redirect("/login")
     else:
+        print("invalid")
         form = CustomerForm()
-    return render(request, "customer/registration.html", {'form': form})
+    return render(request, "customer/registration.html")
 
 
 
@@ -35,20 +39,23 @@ def login_redirect(request):
 
         password=request.POST["password"]
         try:
-            customer=Customer.objects.get(username=username,password=password)
-            request.session['username']=request.POST['username']
-            request.session['password']=request.POST['password']
-            request.session['customer_id']=customer.customer_id
-            return redirect ('/')
-        except:
             user=User.objects.get(username=username,password=password)
-            request.session['username']=request.POST['username']
-            request.session['password']=request.POST['password']
             if user is not None:
+                request.session['username']=request.POST['username']
+                request.session['password']=request.POST['password'] 
                 return redirect('/user/admindash')
-            return render("/login")
+            
+        except:
+            try:
+                customer=Customer.objects.get(username=username,password=password)
+                request.session['username']=request.POST['username']
+                request.session['password']=request.POST['password']
+                request.session['customer_id']=customer.customer_id
+                return redirect ('/')
+            except:
+                messages.error(request, 'Invalid credentials') 
+                return redirect("/login")
     else:
-        messages.error(request, 'Username or password doesnt match')
         form=CustomerForm()
         print("invalid")
     return render(request,"customer/signin.html",{'form':form}) 
@@ -76,7 +83,7 @@ def contact(request):
         form=ContactForm(request.POST)
         print(form)
         form.save()
-        messages.info(Message,"your message has been submitted")
+        messages.info(request,"your message has been submitted")
     return render(request,"contact.html")
 
 
@@ -113,8 +120,9 @@ def hostelprofile(request):
 @Authentication.valid_customer
 def userprofile(request):
     hostels=Hostel.objects.filter(customer_id = request.session['customer_id'])
+    bills=Billing.objects.filter(customer_name=request.session['username'])
     users=Customer.objects.get(username=request.session['username'])
-    return render(request,"customer/userprofile.html",{'users':[users],'hostels':hostels})
+    return render(request,"customer/userprofile.html",{'users':[users],'hostels':hostels,'bills':bills})
 
 def delete(request,h_id):
     hostel=Hostel.objects.get(hostel_id=h_id)
@@ -128,3 +136,4 @@ def date_update(request,h_id):
     form=HostelupdateForm(request.POST, instance=hostel)
     form.save()
     return redirect ("/userprofile")
+

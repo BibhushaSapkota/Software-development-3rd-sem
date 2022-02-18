@@ -4,10 +4,13 @@
   <head>
     <meta charset="UTF-8">
     <link href="{% static 'css/bootstrap.min.css' %}" media="screen" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
     <link href="{% static 'css/jquery-ui-1.10.2.custom.min.css' %}" media="screen" rel="stylesheet" type="text/css">
     <link href="{% static 'css/stream.css' %}" media="screen" rel="stylesheet" type="text/css">
     <script src="{% static 'js/jquery-1.11.3.min.js' %}" type="text/javascript"></script>
     <script src="{% static 'js/jquery-ui-1.10.2.custom.min.js' %}" type="text/javascript"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"> 
     <script src="{% static 'js/filter.js' %}" type="text/javascript"></script>
     <script src="{% static 'js/hosteldata.js' %}" type="text/javascript"></script>
     <script src="{% static 'js/pagination.js' %}" type="text/javascript"></script>
@@ -56,30 +59,24 @@
     </script>
    
   <body>
-    {% include 'header.html'%}
-    {% block header %}
-    {% endblock %}
+    <div class="header">
+      <nav class="navbar navbar-expand-lg navbar-dark"> 
+        <button class="btn btn-outline-success my-2 my-sm-0 "  style="border-radius: 12px;background: rgb(189, 151, 246);margin: 5px;padding-left:30px;padding-right: 30px; color: white; font-size: 22px;">
+          <a href="/"><div class="fas fa-sign-out" type="button" ></div></a>
+        </button>
+          <a href="#" class="navbar-brand">
+            <img src="{% static 'img/logo.png' %}" height="50" alt="CoolBrand">
+          </a> 
+        <a class="navbar-brand" href="#" style="font-size: 50px;color: aliceblue; font-family:'Brush Script MT',cursive;">Chhatrabas</a>  
+       
 
+         
+          
+     
+        </div>   
+       </nav>
+    </header>
       <div class="container">
-         <!--
-      <div class="table-responsive-md  table-responsive-sm ml-3 ">
-        <table class="table table-bordered table-hover table-bordered table-striped">
-               <tr>
-                   <th>name</th>
-                   <th>email</th>
-               </tr>
-            {% for customer in customers %}
-               <tr class="tbody">
-                       <td>{{customer.customer_username}}</td>
-                       <td>{{customer.customer_email}}</td>
-               </tr>
-            {% endfor %}
-        </table>
-      </div>
-    -->
-
-      
-
 
       <div class="sidebar col-md-3">
         <div>
@@ -254,7 +251,7 @@
               </dl>
             </div>
             <div style="text-align: center;">
-              <a href="hostelprofile" class="btn btn-primary btn-lg active" id="btn_<%= _fid %>" onclick="valueSender(<%= _fid %>)" role="button" aria-pressed="true">More info:<%= _fid %>
+              <a href="hostelprofile" class="btn btn-primary btn-lg active" id="btn_<%= _fid %>" onclick="valueSender(<%= _fid %>)" role="button" aria-pressed="true">Check more
                 <p id="hosrat"></p>
                 <p id="hosname"><%= name %></p>
                 <p id="hoslocation"><%= location %></p>

@@ -15,7 +15,8 @@
 body{
     height: 100%;
     width: 100%;
-    background:linear-gradient(135deg, #0D0628,#0D0628 );
+    background: rgb(48,74,208);
+    background: radial-gradient(circle, rgba(48,74,208,1) 0%, rgba(11,93,110,1) 21%, rgba(6,29,80,1) 50%, rgba(48,7,98,1) 78%, rgba(10,19,85,1) 100%, rgba(252,70,107,1) 100%);
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
@@ -70,7 +71,7 @@ body{
     float: left;
     width: 100%;
     margin-left:0px;
-    height: 800px;
+    min-height: 800px;
     padding: 20px;
     border-radius: 50px;
     margin-bottom: 50px;
@@ -249,7 +250,9 @@ button.chatbtn i,button.createbtn i {
 
 }
 .tab {
-  padding:20px;
+  padding-left:20px;
+  padding-right: 20px;
+  margin-bottom: 20px;
   width:100%;
   text-align: center;
   display: none;
@@ -393,4 +396,83 @@ button.chatbtn i,button.createbtn i {
     }
   } 
 
-
+  .slider .slider-item{
+    display: none;
+    animation: reveal .5s ease-in-out;
+  }
+  .slider .slider-item.active {
+    display: block;
+  }
+  .slider .dots {
+    text-align: center;
+    padding: 10px;
+  }
+  .slider .dots li {
+    cursor: pointer;
+    display: inline-block;
+    background: #333;
+    color: #fff;
+    padding: 7px 11px;
+    line-height: .5;
+    border-radius: 50%;
+    text-indent: -9999px;
+    opacity: .5;
+    -webkit-transition: opacity .2s;
+    -o-transition: opacity .2s;
+    transition: opacity .2s;
+  }
+  .slider .dots li.active{
+    opacity: 1;
+  }
+  @keyframes reveal{
+    from{
+      opacity: 0;
+    }
+    to{
+      opacity: 1;
+    }
+  }
+  .profile-map{
+    margin-left: 30%;
+  }
+  .profile-posts{
+    text-align: left;
+  }
+  .infor{
+    background-color: #6f4caf4d;
+    border-radius: 10px;
+    box-shadow: rgb(255, 255, 255) 5px 10px 15px, rgb(255, 255, 255) 0px 2px 4px, rgba(54, 0, 99,0.07) 0px 4px 8px, rgba(54, 0, 99,0.07) 0px 8px 16px, rgba(54, 0, 99,0.07) 0px 16px 32px, rgba(54, 0, 99,0.07) 0px 32px 64px;
+    padding: 20px;
+  }
+  .wrap {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .button {
+    width: 200px;
+    height: 100px;
+    font-family: 'Roboto', sans-serif;
+    font-size: 20px;
+    margin-bottom: 30px;
+    text-transform: uppercase;
+    letter-spacing: 2.5px;
+    font-weight: 500;
+    color: rgb(214, 214, 214);
+    background-color: rgba(0, 65, 204, 0.39);
+    border: none;
+    border-radius: 45px;
+    box-shadow: 10px 80px 150px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease 0s;
+    cursor: pointer;
+    outline: none;
+    }
+  
+  .button:hover {
+    background-color: #2EE59D;
+    box-shadow: 0px 15px 20px rgba(46, 229, 157, 0.4);
+    color: #fff;
+    transform: translateY(-7px);
+  }
