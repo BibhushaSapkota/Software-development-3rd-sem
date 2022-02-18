@@ -201,8 +201,7 @@ section .text-container .text-box{
   padding: 20px;
   background: rgba(3, 84, 150, 0.4);
   border-radius: 50px;
-  
-  
+  color: white;  
 }
 section .text-container .text-box h3{
   font-size: 30px;
@@ -422,6 +421,6 @@ ul#move li:nth-child(3) {
     font-size: 15px;
   }
 }
-
-
-
+.active{
+  color: red !important;
+}

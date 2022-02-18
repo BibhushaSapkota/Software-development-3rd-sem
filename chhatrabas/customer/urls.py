@@ -15,5 +15,4 @@ urlpatterns = [
     path('date_update/<int:h_id>', views.date_update),
     path('billing/<int:h_id>',views.billing),
     path('billing',views.bill)
-
 ]

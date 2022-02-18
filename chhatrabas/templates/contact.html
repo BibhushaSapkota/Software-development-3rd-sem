@@ -1,5 +1,9 @@
+
+{% extends "layout.html" %}
 <!DOCTYPE html>
 {% load static %}
+{% block content %}
+
 <html>
     <head>
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -14,9 +18,8 @@
             </head>
 
         <body>
-            {% include 'header.html'%}
-            {% block header %}
-            {% endblock %}
+
+            
             </div>
                 <div class="contact-section">
                     <div class="contact-info">
@@ -44,6 +47,16 @@
                     </div>
 
                 </div>
+                <script>
+                    // Add active class to the current button (highlight it)
+                var header = document.getElementById("collapsibleNavbar");
+                var btns = header.getElementsByClassName("nav-link");
+                btns[3].classList="nav-link active"
+                btns[0].classList="nav-link"
+                btns[1].classList="nav-link"
+                btns[2].classList="nav-link"
+                </script>
+                {% endblock %}
             
         </body>
 </html>
