@@ -12,29 +12,33 @@
               <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">  
                <span class="navbar-toggler-icon"></span>  
               </button>  
-              <div class="collapse navbar-collapse " id="collapsibleNavbar">
-                 <a class="nav-link active"  id="btn" onclick="myFunction(id)" href="/" style="color:red;">Home</a>  
-                 <a class="nav-link" id="btn1" href="/customer/hostel" onclick="myFunction(id)" style="color: aliceblue;">Hostel</a>  
-                 <a class="nav-link" id="btn2" href="blog" onclick="myFunction(id)" style="color: aliceblue;">About us</a>  
-                <a class="nav-link"  id="btn3" href="contact"  onclick="myFunction(id)" style="color: aliceblue;">Contact</a>  
+              <div class="collapse navbar-collapse justify-content-center" id="collapsibleNavbar">
+                <div class="d-flex justify-content-center">
+                 <span><a class="nav-link active"  id="btn" href="/">Home</a>  </span>
+                 <span><a class="nav-link" id="btn1" href="/customer/hostel" >Hostel</a>  </span>
+                 <a class="nav-link" id="btn2" href="blog">About us</a>  
+                <a class="nav-link"  id="btn3" href="contact"  onclick="myFunction()">Contact</a> 
+            
                </div>  
                {% if request.session.customer_id %}
-               <form class="d-flex flex-row justify-content-center">
-                <button class="btn btn-outline-success my-2 my-sm-0 "  style="border-radius: 12px;background: rgb(189, 151, 246);margin: 5px;padding-left:30px;padding-right: 30px; color: white; font-size: 22px;">
+               <form class="d-flex justify-content-end">
+                <button class="btn btn-outline-success my-2 my-sm-0 ml-2"  style="border-radius: 12px;background: rgb(189, 151, 246);margin: 5px;padding-left:30px;padding-right: 30px; color: white; font-size: 22px;">
                   <a href="userprofile" title="section">{{request.session.username}}</a></button>
-                <button class="btn btn-outline-success my-2 my-sm-0 "  style="border-radius: 12px;background: rgb(189, 151, 246);margin: 5px;padding-left:30px;padding-right: 30px; color: white; font-size: 22px;">
+                <button class="btn btn-outline-success my-2 my-sm-0 ml-2"  style="border-radius: 12px;background: rgb(189, 151, 246);margin: 5px;padding-left:30px;padding-right: 30px; color: white; font-size: 22px;">
                   <a href="signout" title="section">signout</a></button>
               </form>
               {% else %}
-              <form class="d-flex flex-row justify-content-center">
+              <form class="d-flex justify-content-end">
                 <button class="btn btn-outline-success my-2 my-sm-0 "  style="border-radius: 12px;background: rgb(189, 151, 246);margin: 5px;padding-left:30px;padding-right: 30px; color: white; font-size: 22px;">
                   <a href="login" title="section">Login</a></button>
                 <button class="btn btn-outline-success my-2 my-sm-0 "  style="border-radius: 12px;background: rgb(189, 151, 246);margin: 5px;padding-left:30px;padding-right: 30px; color: white; font-size: 22px;">
                   <a href="register" title="section">Register</a></button>
               </form>
               {% endif %}
-              </div>   
+              </div>  
+            </div> 
              </nav>
           </header>
+         
           {% endblock %}
 

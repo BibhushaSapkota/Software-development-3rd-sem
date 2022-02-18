@@ -332,7 +332,10 @@ dt{
   }
 @media only screen and (max-width: 1200px) {
     .image{
-      width:670px !important;
+      width: 100% !important;
+      text-align: center !important;    
+      padding-left: 40px;
+      padding-right: 40px;
     }
 }
 @media only screen and (max-width: 991px) {

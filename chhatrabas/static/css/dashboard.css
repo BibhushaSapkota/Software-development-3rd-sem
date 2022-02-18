@@ -24,18 +24,22 @@ body{
 
 .navbar
 {
-    background:rgba(0,0,0,0.2)
+    background:rgba(0,0,0,0.2);
+    min-height: 100px !important;
 }
 .nav-link{
     font-size: 25px;
     font-family:Georgia, 'Times New Roman', Times, serif;
+    color: rgb(255 255 255);
+    display: -webkit-inline-box !important;
 
 }
 .navbar-toggler-icon {
     background:white;
   }
-.nav-item:hover{
+.nav-link:hover{
     background-color: rgba(255, 255, 255,0.2);
+    color: red;
     border-radius: 20px;
 }
 ::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
@@ -197,8 +201,7 @@ section .text-container .text-box{
   padding: 20px;
   background: rgba(3, 84, 150, 0.4);
   border-radius: 50px;
-  
-  
+  color: white !important;
 }
 section .text-container .text-box h3{
   font-size: 30px;
@@ -234,7 +237,10 @@ section .text-container .text-box h3{
     color: white;
   }
 }
+.active{
+  color: red !important;
 
+}
 .reveal{
   position: relative;
   transform: translateY(150px);
@@ -418,6 +424,15 @@ ul#move li:nth-child(3) {
     font-size: 15px;
   }
 }
-
+.navbar-collapse {
+  -ms-flex-preferred-size: 100%;
+  flex-basis: 100%;
+  flex-grow: 0 !important;
+  /* flex-grow: 1; */
+  -ms-flex-align: center;
+  align-items: center !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+}
 
 
