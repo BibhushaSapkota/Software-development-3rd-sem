@@ -13,22 +13,10 @@
                <span class="navbar-toggler-icon"></span>  
               </button>  
               <div class="collapse navbar-collapse " id="collapsibleNavbar">
-                  <div class="container justify-content-center">
-               <ul class="navbar-nav">  
-                <li class="nav-item " >  
-                 <a class="nav-link"  id="btn" onclick="myFunction(id)" href="/" style="color:red;">Home</a>  
-                </li>  
-                <li class="nav-item">  
+                 <a class="nav-link active"  id="btn" onclick="myFunction(id)" href="/" style="color:red;">Home</a>  
                  <a class="nav-link" id="btn1" href="/customer/hostel" onclick="myFunction(id)" style="color: aliceblue;">Hostel</a>  
-                </li>  
-                <li class="nav-item">  
                  <a class="nav-link" id="btn2" href="blog" onclick="myFunction(id)" style="color: aliceblue;">About us</a>  
-                </li>    
-                <li class="nav-item">  
-                  <a class="nav-link"  id="btn3" href="contact"  onclick="myFunction(id)" style="color: aliceblue;">Contact</a>  
-                 </li>    
-               </ul>
-                
+                <a class="nav-link"  id="btn3" href="contact"  onclick="myFunction(id)" style="color: aliceblue;">Contact</a>  
                </div>  
                {% if request.session.customer_id %}
                <form class="d-flex flex-row justify-content-center">
