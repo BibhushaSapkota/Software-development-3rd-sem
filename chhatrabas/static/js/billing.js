@@ -15,13 +15,3 @@ function price(){
     document.getElementById("price").innerHTML = total_price;
      
 }
-
-function pricefield(){
-    var pricefield = document.getElementById("cost").value;
-    console.log(pricefield)
-    total_price = Math.floor((Number(pricefield)/30)*diff)
-    document.getElementById("pricefield").value = total_price;
-  
-}
-
-
