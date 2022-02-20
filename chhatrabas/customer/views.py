@@ -85,6 +85,7 @@ def contact(request):
         form.save()
         messages.info(request,"your message has been submitted")
     return render(request,"contact.html")
+    
 
 
 
