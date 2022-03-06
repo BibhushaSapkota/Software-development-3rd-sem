@@ -1,4 +1,4 @@
-import imp
+
 from django.shortcuts import render
 from customer.models import *
 from customer.forms import *

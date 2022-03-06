@@ -10,7 +10,7 @@ class ReadConfig:
         return url
     @staticmethod
     def getUserName():
-        username=config.get('common-info','userName')
+        username=config.get('common-info','username')
         return username
 
     @staticmethod
